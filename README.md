@@ -16,6 +16,15 @@ Para criar o Backend:
 > cd backend
 > npm install
 ```
+Alterar porta:
+No ficheiro ./backend/bin/www, alterar:
+```
+var port = normalizePort(process.env.PORT || '3000');
+```
+Para:
+```
+var port = normalizePort(process.env.PORT || '8080');
+```
 ### Frontend - React - Porta 3000
 Para criar o Frontend:
 ```
