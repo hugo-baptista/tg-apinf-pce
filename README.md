@@ -1,6 +1,6 @@
 # Trabalho de Grupo de Aplicações Informáticas e Processo Clínico Eletrónico
 
-## Autores:
+### Autores:
 ```
 A87240 Ciarán John Tavares McEvoy
 PG50392 Gonçalo Afonso de Carvalho
