@@ -9,12 +9,15 @@ PG50788 Tomás Alves Lima
 ```
 
 ## Estrutura do Trabalho
-```
 - Base de Dados - Mongo
-
+```
+> ???
+```
 - BackEnd - NodeJS
+```
 > express --no-view backend
-
+```
 - FrontEnd - React
+```
 > npx create-react-app frontend
 ```
