@@ -8,15 +8,15 @@ PG50416 Hugo Baptista Fernandes Silva
 PG50788 Tomás Alves Lima
 ```
 
-## Estrutura do Trabalho
-### Backend - NodeJS - Porta 8080
-Para criar o Backend:
+# Estrutura do Trabalho
+## Backend - NodeJS - Porta 8080
+### Para criar o Backend:
 ```
 > express --no-view backend
 > cd backend
 > npm install
 ```
-Alterar porta:
+### Alterar porta:
 
 No ficheiro ./backend/bin/www, alterar:
 ```
@@ -26,12 +26,13 @@ Para:
 ```
 var port = normalizePort(process.env.PORT || '8080');
 ```
-### Frontend - React - Porta 3000
-Para criar o Frontend:
+## Frontend - React - Porta 3000
+### Para criar o Frontend:
 ```
 > npx create-react-app frontend
 ```
-### Base de Dados - Mongo
+## Base de Dados - Mongo
+### Criar Base de Dados:
 ```
 > ???
 ```
