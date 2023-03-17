@@ -17,7 +17,6 @@ PG50788 Tomás Alves Lima
 > npm install
 ```
 ### Alterar porta:
-
 No ficheiro ./backend/bin/www, alterar:
 ```
 var port = normalizePort(process.env.PORT || '3000');
@@ -30,6 +29,11 @@ var port = normalizePort(process.env.PORT || '8080');
 ### Criar o Frontend:
 ```
 > npx create-react-app frontend
+```
+### Dependências:
+A pasta das depenências (node_modules) do Frontend não é colocada no GitHub por ser muito pesada, pelo que é necessário correr o seguinte código para as baixar:
+```
+> npm install
 ```
 ## Base de Dados - Mongo
 ### Criar Base de Dados:
