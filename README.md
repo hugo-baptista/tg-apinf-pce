@@ -9,13 +9,15 @@ PG50788 Tomás Alves Lima
 ```
 
 ## Estrutura do Trabalho
-### BackEnd - NodeJS - Porta 8080
+### Backend - NodeJS - Porta 8080
+Para criar o Backend:
 ```
 > express --no-view backend
 > cd backend
 > npm install
 ```
-### FrontEnd - React - Porta 3000
+### Frontend - React - Porta 3000
+Para criar o Frontend:
 ```
 > npx create-react-app frontend
 ```
