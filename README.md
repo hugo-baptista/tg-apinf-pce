@@ -10,7 +10,7 @@ PG50788 Tomás Alves Lima
 
 # Estrutura do Trabalho
 ## Backend - NodeJS - Porta 8080
-### Para criar o Backend:
+### Criar o Backend:
 ```
 > express --no-view backend
 > cd backend
@@ -27,7 +27,7 @@ Para:
 var port = normalizePort(process.env.PORT || '8080');
 ```
 ## Frontend - React - Porta 3000
-### Para criar o Frontend:
+### Criar o Frontend:
 ```
 > npx create-react-app frontend
 ```
