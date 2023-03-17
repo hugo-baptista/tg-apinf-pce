@@ -12,6 +12,7 @@ PG50788 Tomás Alves Lima
 - BackEnd - NodeJS - Porta 8080
 ```
 > express --no-view backend
+> cd backend
 > npm install
 ```
 - FrontEnd - React - Porta 3000
