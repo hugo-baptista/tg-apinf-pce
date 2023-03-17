@@ -5,6 +5,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var loginRouter = require('./controllers/login.controller');
 
 var app = express();
 
@@ -16,5 +17,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/login', loginRouter);
+
+const PORT = 8080;
+app.listen(PORT, () => {
+    console.log(`Backend running in the port ${PORT}`);
+})
 
 module.exports = app;
