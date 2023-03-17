@@ -19,9 +19,4 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 
-const PORT = 8080;
-app.listen(PORT, () => {
-    console.log(`Backend running in the port ${PORT}`);
-})
-
 module.exports = app;
