@@ -9,17 +9,17 @@ PG50788 Tomás Alves Lima
 ```
 
 ## Estrutura do Trabalho
-- BackEnd - NodeJS - Porta 8080
+### BackEnd - NodeJS - Porta 8080
 ```
 > express --no-view backend
 > cd backend
 > npm install
 ```
-- FrontEnd - React - Porta 3000
+### FrontEnd - React - Porta 3000
 ```
 > npx create-react-app frontend
 ```
-- Base de Dados - Mongo
+### Base de Dados - Mongo
 ```
 > ???
 ```
