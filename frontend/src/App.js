@@ -2,6 +2,8 @@ import Navbar from './Navbar';
 import Home from './Home';
 import "./index.css";
 import React, { useState } from "react";
+import axios from "axios";
+import FileUpload from './FileUpload';
 
 function App() {
   const [errorMessages, setErrorMessages] = useState({});
@@ -43,6 +45,7 @@ function App() {
     }
   };
 
+
   
   const renderErrorMessage = (name) =>
     name === errorMessages.name && (
@@ -51,7 +54,7 @@ function App() {
 
   const renderForm = (
     <div className="form">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}> 
         <div className="input-container">
           <label>Username </label>
           <input type="text" name="uname" required />
