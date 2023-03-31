@@ -15,7 +15,7 @@
   border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
-  color: #f1356d;
+  color: #0066be;
 }
 .navbar .links {
   margin-left: auto;
@@ -26,73 +26,119 @@
   padding: 6px;
 }
 .navbar a:hover {
-  color: #f1356d;
+  color: #0066be;
 }
 .content {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
 }
-.app {
-  font-family: sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-  height: 100vh;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: white;
+.navbar #a-create {
+  color: white;
+  background-color: #0066be;
+  border-radius: 8px;
+}
+.navbar #a-create:hover {
+  color: #0066be;
+  background-color: lightgray;
 }
 
-input[type="text"],
-input[type="password"] {
-  height: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+/* blog-preview */
+.blog-preview{
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
 }
 
-input[type="submit"] {
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  background: #01d28e;
-  border: 1px solid #01d28e;
+.blog-preview:hover{
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+
+.blog-preview h2{
+  font-size: 20px;
+  color: #0066be;
+  margin-bottom: 8px;
+}
+.blog-preview a {
+  text-decoration: none;
+}
+
+div #loading {
+  text-align: center;
+}
+
+/* blog details page */
+.blog-details h2 {
+  font-size: 20px;
+  color: #0066be;
+  margin-bottom: 10px;
+}
+.blog-details div {
+  margin: 20px 0;
+}
+.blog-details button {
+  background: #f1356d;
   color: #fff;
-  padding: 10px 20px;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-input[type="submit"]:hover {
-  background: #6cf0c2;
+/* create new blog form */
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display: block;
+}
+.create h2 {
+  font-size: 20px;
+  color: #0066be;
+  margin-bottom: 30px;
+}
+.create input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.create button {
+  background: #0066be;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.button-container {
-  display: flex;
-  justify-content: center;
+/* not found page */
+.not-found {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
 }
-
-.login-form {
-  background-color: whitesmoke;
-  padding: 2rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.not-found h2 {
+  font-size: 20px;
+  color: #0066be;
+  margin-bottom: 30px;
 }
-
-.list-container {
-  display: flex;
+.not-found p {
+  margin-bottom: 30px;
 }
-
-.error {
-  color: red;
-  font-size: 12px;
+.not-found a {
+  text-decoration: none;
+  padding: 6px;
+  color: white;
+  background-color: #0066be;
+  border-radius: 8px;
 }
-
-.title {
-  font-size: 25px;
-  margin-bottom: 20px;
-}
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 10px;
+.not-found a:hover {
+  color: #0066be;
+  background-color: lightgray;
 }

@@ -1,6 +1,6 @@
 import useFetch from "./useFetch";
 
-const Home = () => {
+const Login = () => {
     // const {data: blogs, isLoading, error} = useFetch("http://localhost:8000/blogs");
 
     // return (
@@ -12,8 +12,8 @@ const Home = () => {
     // );
 
     return(
-        <p>Placeholder</p>
+        <p>Login Placeholder</p>
     )
 }
  
-export default Home;
+export default Login;
