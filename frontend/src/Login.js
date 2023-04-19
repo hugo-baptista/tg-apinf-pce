@@ -7,8 +7,8 @@ function Login() {
     
     const database = [
       {
-        username: "pilinhaboa",
-        password: "pilinhaboa"
+        username: "new",
+        password: "new"
       },
     ];
   
