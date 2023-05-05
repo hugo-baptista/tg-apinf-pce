@@ -1,5 +1,5 @@
 import {Form} from "protected-aidaforms";
-let json = require('./jdt.json');
+let json = require('./archetypes/jdt_analises.json');
 
 const FormPage = () => {
     return (

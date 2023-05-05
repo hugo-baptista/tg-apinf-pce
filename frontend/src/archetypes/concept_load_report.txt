@@ -1,0 +1,9 @@
+﻿{
+    "messages": [
+        "Template depends on archetype openEHR-EHR-CLUSTER.person.v1 which may have changed since this template was last saved. Template expects integrity hash: af9d36825e3056d8bfabe034a27f673d, but actual: F1B417CBAE0A0D6B70856C5909865044",
+        "Template depends on archetype openEHR-EHR-ACTION.procedure.v1 which may have changed since this template was last saved. Template expects integrity hash: 1ce9c4746616324e32e70b263e6fe686, but actual: 7976419EEFB8BFACDA7BAB23201F9BEF",
+        "Template depends on archetype openEHR-EHR-CLUSTER.laboratory_test_analyte.v1 which may have changed since this template was last saved. Template expects integrity hash: 1a9c6dfd9a7f9271bda4dfcb262d69c4, but actual: F0EBDC100A16A3A8BE1511BF3715C582",
+        "Template depends on archetype openEHR-EHR-CLUSTER.person_identifiable_parent.v1 which may have changed since this template was last saved. Template expects integrity hash: 7fba7d91d75e08d2591cbdffb6ca071b, but actual: 44C831CF11C3BB6A501B53726A545993",
+        "Constraint node at [openEHR-EHR-CLUSTER.ovl-person_identifiable_parent-001.v1/items[at0010.1]] specializes a constraint missing in parent archetype [openEHR-EHR-CLUSTER.person_identifiable_parent.v1] and was removed during flattening"
+    ]
+}
