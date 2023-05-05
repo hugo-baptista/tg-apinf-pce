@@ -32,3 +32,7 @@ app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 
 module.exports = app;
+
+const createBaseUsers = require('./controller/createBaseUsers');
+
+createBaseUsers.createBaseUsers();

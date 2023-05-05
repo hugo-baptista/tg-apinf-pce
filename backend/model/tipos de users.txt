@@ -1,0 +1,4 @@
+224608005   Administrative healthcare staff
+18850004 	Laboratory hematologist
+61246008 	Laboratory medicine specialist
+224529009 	Clinical assistant
