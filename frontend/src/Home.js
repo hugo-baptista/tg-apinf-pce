@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { UserContext } from "./static/UserContext";
 import useFetch from "./useFetch";
 
 const Home = () => {
@@ -11,8 +13,12 @@ const Home = () => {
     //     </div>
     // );
 
+    const {user, setUser} = useContext(UserContext);
+
     return(
-        <p>Placeholder</p>
+        <div>
+            <p>Placeholder</p>
+        </div>
     )
 }
  

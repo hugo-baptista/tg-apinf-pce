@@ -1,10 +1,11 @@
 let UserModel = require('../model/User');
 
-module.exports.newUser = async (username, password, code, designation, create_users, create_forms, view_forms) => {
+module.exports.newUser = async (username, password, name, code, designation, create_users, create_forms, view_forms) => {
     try {
         newUser = {
             username,
             password,
+            name,
             code,
             designation,
             permissions: {
