@@ -4,9 +4,17 @@
 * {
   margin: 0;
   font-family: "Quicksand";
-  color: #333;
 }
-.navbar {
+
+.content {
+  color: #333;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* navbar */
+/* .navbar {
   padding: 20px;
   display: flex;
   align-items: center;
@@ -28,11 +36,6 @@
 .navbar a:hover {
   color: #0066be;
 }
-.content {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-}
 .navbar #a-create {
   color: white;
   background-color: #0066be;
@@ -41,10 +44,10 @@
 .navbar #a-create:hover {
   color: #0066be;
   background-color: lightgray;
-}
+} */
 
 /* blog-preview */
-.blog-preview{
+/* .blog-preview{
   padding: 10px 16px;
   margin: 20px 0;
   border-bottom: 1px solid #fafafa;
@@ -65,10 +68,10 @@
 
 div #loading {
   text-align: center;
-}
+} */
 
 /* blog details page */
-.blog-details h2 {
+/* .blog-details h2 {
   font-size: 20px;
   color: #0066be;
   margin-bottom: 10px;
@@ -83,10 +86,10 @@ div #loading {
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
-}
+} */
 
 /* create new blog form */
-.create {
+/* .create {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
@@ -115,10 +118,10 @@ div #loading {
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
-}
+} */
 
 /* not found page */
-.not-found {
+/* .not-found {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
@@ -141,4 +144,4 @@ div #loading {
 .not-found a:hover {
   color: #0066be;
   background-color: lightgray;
-}
+} */
