@@ -1,0 +1,814 @@
+{
+    "resourceType": "Bundle",
+    "id": "c3b36c20-0fff-44a0-bf48-6ef1b81f45a0",
+    "meta": {
+        "lastUpdated": "2017-10-05T23:10:00.358+01:00",
+        "profile": [
+            "http://spms.min-saude.pt/pnb/profiles/mcdt_results_sync/v1.5.8"
+        ]
+    },
+    "type": "message",
+    "entry": [
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/MessageHeader/ac185937-cc34-4e42-9459-ae5e1306c34d",
+            "resource": {
+                "resourceType": "MessageHeader",
+                "id": "ac185937-cc34-4e42-9459-ae5e1306c34d",
+                "event": {
+                    "system": "http://spms.min-saude.pt/pnb/events",
+                    "code": "10705",
+                    "display": "MCDT_RESULTS_SYNCHRONIZATION"
+                },
+                "destination": [
+                    {
+                        "name": "RequiringApp",
+                        "endpoint": "SPMS/HEP"
+                    },
+                    {
+                        "name": "BDNR",
+                        "endpoint": "SPMS/BDNR"
+                    }
+                ],
+                "receiver": {
+                    "reference": "Organization/9999999",
+                    "display": "CS Exemplo"
+                },
+                "sender": {
+                    "reference": "Organization/78e24234",
+                    "display": "LABORATÓRIO"
+                },
+                "timestamp": "2017-10-05T23:10:00.358+01:00",
+                "source": {
+                    "name": "CARDIOLOGIC",
+                    "endpoint": "101.20.15.12"
+                },
+                "focus": [
+                    {
+                        "reference": "DiagnosticReport/101"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Patient/987654321",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "987654321",
+                "extension": [
+                    {
+                        "url": "http://spms.min-saude.pt/pnb/extensions/patient-coverage",
+                        "valueReference": {
+                            "reference": "Coverage/ADSE"
+                        }
+                    }
+                ],
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://hl7.org/fhir/v2/0203",
+                                    "code": "HC",
+                                    "display": "Health Card Number"
+                                }
+                            ],
+                            "text": "SNS"
+                        },
+                        "system": "http://spms.min-saude.pt/rnu/identifiers/patient-id",
+                        "value": "987654321"
+                    }
+                ],
+                "name": [
+                    {
+                        "text": "PAULO EXEMPLO DE NOME DA SILVA"
+                    }
+                ],
+                "gender": "male",
+                "birthDate": "1970-01-01",
+                "address": [
+                    {
+                        "text": "Rua de Exemplo, nº 99 9999-999 EXEMPLO"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/DiagnosticReport/101",
+            "resource": {
+                "resourceType": "DiagnosticReport",
+                "id": "101",
+                "meta": {
+                    "security": [
+                        {
+                            "system": "http://hl7.org/fhir/v3/Confidentiality",
+                            "code": "R",
+                            "display": "Restricted"
+                        }
+                    ]
+                },
+                "basedOn": [
+                    {
+                        "identifier": {
+                            "system": "https://spms.min-saude.pt/bdnr/identifiers/mcdt-request-id",
+                            "value": "777881234"
+                        }
+                    }
+                ],
+                "status": "final",
+                "category": {
+                    "coding": [
+                        {
+                            "system": "http://www.acss.min-saude.pt/mcdt/valueset/clinical-areas",
+                            "code": "A",
+                            "display": "Análises Clínicas"
+                        },
+                        {
+                            "system": "http://hl7.org/fhir/v2/0074",
+                            "code": "HM",
+                            "display": "Hematology"
+                        }
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        
+                        {
+                            "system": "https://spms.min-saude.pt/<convencionado>/mcdt/valueset/<mcdt-codes>",
+                            "code": "684.0",
+                            "display": "17 alfa-hidroxiprogesterona, s "
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/987654321"
+                },
+                "issued": "2017-10-04T11:45:33+01:00",
+                "performer": [
+                    {
+                        "actor": {
+                            "reference": "Organization/78e24234",
+                            "display": "LABORATÓRIO"
+                        }
+                    },
+                    {
+                        "role": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "18850004",
+                                    "display": "Laboratory hematologist"
+                                }
+                            ]
+                        },
+                        "actor": {
+                            "reference": "Practitioner/99999",
+                            "display": "Dra. Remedios"
+                        }
+                    }
+                ],
+                "result": [
+                    {
+                        "reference": "Observation/item2001000000005034600001"
+                    },
+                    {
+                        "reference": "Observation/item2001000000005034600002"
+                    }
+                ],
+                "conclusion": "Resultados fora do normal, necessário repetir análises dentro de 6 meses.",
+                "presentedForm": [
+                    {
+                        "contentType": "application/pdf",
+                        "language": "pt",
+                        "data": "U291IGEgbmF2ZWdhbnRlIGRhIGx1YSBlIGVtIG5vbWUgZGEgbHVhIHZhaXMgc2VyIGNhc3RpZ2FkbyA6RA==",
+                        "title": "Access key"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Observation/item-2001000000005034600001",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "item-2001000000005034600001",
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "57021-8",
+                            "display": "Painel hemograma completo com diferencial, sangue"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/987654321"
+                },
+                "effectiveDateTime": "2017-10-04T14:10:23+01:00",
+                "performer": [
+                    {
+                        "reference": "Practitioner/99999",
+                        "display": "Dra. Remedios"
+                    }
+                ],
+                "related": [
+                    {
+                        "type": "has-member",
+                        "target": {
+                            "reference": "Observation/item2001000000005034600001.1"
+                        }
+                    },
+                    {
+                        "type": "has-member",
+                        "target": {
+                            "reference": "Observation/item2001000000005034600001.2"
+                        }
+                    },
+                    {
+                        "type": "has-member",
+                        "target": {
+                            "reference": "Observation/item2001000000005034600001.3"
+                        }
+                    },
+                    {
+                        "type": "has-member",
+                        "target": {
+                            "reference": "Observation/item2001000000005034600001.4"
+                        }
+                    },
+                    {
+                        "type": "has-member",
+                        "target": {
+                            "reference": "Observation/item2001000000005034600001.5"
+                        }
+                    },
+                    {
+                        "type": "has-member",
+                        "target": {
+                            "reference": "Observation/item2001000000005034600001.6"
+                        }
+                    },
+                    {
+                        "type": "has-member",
+                        "target": {
+                            "reference": "Observation/item2001000000005034600001.7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Observation/item2001000000005034600001.1",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "item-2001000000005034600001.1",
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "718-7",
+                            "display": "Hemoglobin [Mass/volume] in Blood"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/987654321"
+                },
+                "effectiveDateTime": "2017-10-04T14:10:23+01:00",
+                "performer": [
+                    {
+                        "reference": "Practitioner/99999",
+                        "display": "Dra. Remedios"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 176,
+                    "unit": "g/dL",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "g/dL"
+                },
+                "interpretation": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v2/0078",
+                            "code": "N",
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "referenceRange": [
+                    {
+                        "low": {
+                            "value": 135,
+                            "unit": "g/dL",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "g/dL"
+                        },
+                        "high": {
+                            "value": 180,
+                            "unit": "g/dL",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "g/dL"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Observation/item2001000000005034600001.2",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "item-2001000000005034600001.2",
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "789-8",
+                            "display": "Erythrocytes [#/volume] in Blood by Automated count"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/987654321"
+                },
+                "effectiveDateTime": "2017-10-04T14:10:23+01:00",
+                "performer": [
+                    {
+                        "reference": "Practitioner/99999",
+                        "display": "Dra. Remedios"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 5.9,
+                    "unit": "10*12/L",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "10*12/L"
+                },
+                "interpretation": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v2/0078",
+                            "code": "N",
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "referenceRange": [
+                    {
+                        "low": {
+                            "value": 4.2,
+                            "unit": "10*12/L",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "10*12/L"
+                        },
+                        "high": {
+                            "value": 6,
+                            "unit": "10*12/L",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "10*12/L"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Observation/item-2001000000005034600001.3",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "item-2001000000005034600001.3",
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "4544-3",
+                            "display": "Hematocrit [Volume Fraction] of Blood by Automated count"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/987654321"
+                },
+                "effectiveDateTime": "2017-10-04T14:10:23+01:00",
+                "performer": [
+                    {
+                        "reference": "Practitioner/99999",
+                        "display": "Dra. Remedios"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 55,
+                    "unit": "%",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "%"
+                },
+                "interpretation": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v2/0078",
+                            "code": "A",
+                            "display": "Abnormal"
+                        }
+                    ]
+                },
+                "referenceRange": [
+                    {
+                        "low": {
+                            "value": 38,
+                            "unit": "%",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "%"
+                        },
+                        "high": {
+                            "value": 52,
+                            "unit": "%",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "%"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Observation/item2001000000005034600001.4",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "item-2001000000005034600001.4",
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "787-2",
+                            "display": "MCV [Entitic volume] by Automated count"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/987654321"
+                },
+                "effectiveDateTime": "2017-10-04T14:10:23+01:00",
+                "performer": [
+                    {
+                        "reference": "Practitioner/99999",
+                        "display": "Dra. Remedios"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 99,
+                    "unit": "fL",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "fL"
+                },
+                "interpretation": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v2/0078",
+                            "code": "A",
+                            "display": "Abnormal"
+                        }
+                    ]
+                },
+                "referenceRange": [
+                    {
+                        "low": {
+                            "value": 80,
+                            "unit": "fL",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "fL"
+                        },
+                        "high": {
+                            "value": 98,
+                            "unit": "fL",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "fL"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Observation/item2001000000005034600001.5",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "item-2001000000005034600001.5",
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "785-6",
+                            "display": "MCH [Entitic mass] by Automated count"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/987654321"
+                },
+                "effectiveDateTime": "2017-10-04T14:10:23+01:00",
+                "performer": [
+                    {
+                        "reference": "Practitioner/99999",
+                        "display": "Dra. Remedios"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 36,
+                    "unit": "pg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "pg"
+                },
+                "interpretation": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v2/0078",
+                            "code": "A",
+                            "display": "Abnormal"
+                        }
+                    ]
+                },
+                "referenceRange": [
+                    {
+                        "low": {
+                            "value": 27,
+                            "unit": "pg",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "pg"
+                        },
+                        "high": {
+                            "value": 35,
+                            "unit": "pg",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "pg"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Observation/item2001000000005034600001.6",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "item-2001000000005034600001.6",
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "777-3",
+                            "display": "Platelets [#/volume] in Blood by Automated count"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/987654321"
+                },
+                "effectiveDateTime": "2017-10-04T14:10:23+01:00",
+                "performer": [
+                    {
+                        "reference": "Practitioner/99999",
+                        "display": "Dra. Remedios"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 444,
+                    "unit": "10*9/L",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "277288007"
+                },
+                "interpretation": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v2/0078",
+                            "code": "N",
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "referenceRange": [
+                    {
+                        "low": {
+                            "value": 150,
+                            "unit": "10*9/L",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "10*9/L"
+                        },
+                        "high": {
+                            "value": 450,
+                            "unit": "10*9/L",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "10*9/L"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Observation/item2001000000005034600001.7",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "item-2001000000005034600001.7",
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "6690-2",
+                            "display": "Leukocytes [#/volume] in Blood by Automated count"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/987654321"
+                },
+                "effectiveDateTime": "2017-10-04T14:10:23+01:00",
+                "performer": [
+                    {
+                        "reference": "Practitioner/99999",
+                        "display": "Dra. Remedios"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 4.6,
+                    "unit": "10*9/L",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "10*9/L"
+                },
+                "interpretation": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v2/0078",
+                            "code": "N",
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "referenceRange": [
+                    {
+                        "low": {
+                            "value": 4,
+                            "unit": "10*9/L",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "10*9/L"
+                        },
+                        "high": {
+                            "value": 11,
+                            "unit": "10*9/L",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "10*9/L"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Observation/item-2001000000005034600002",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "item-2001000000005034600002",
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://www.acss.min-saude.pt/2016/10/03/tabelas-meios-complementares-de-diagnostico-e-terapeutica/codigoconvencionado",
+                            "code": "620.3",
+                            "display": "Triglicéridos, s/u/l"
+                        },
+                        {
+                            "system": "http://loinc.org",
+                            "code": "14445-1",
+                            "display": "Triglyceride [Mass/volume] in Amniotic fluid"
+                        },
+                        {
+                            "system": "http://www.acss.min-saude.pt/2016/10/03/tabelas-meios-complementares-de-diagnostico-e-terapeutica/codigosns",
+                            "code": "22920"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/987654321"
+                },
+                "effectiveDateTime": "2017-10-04T14:10:23+01:00",
+                "performer": [
+                    {
+                        "reference": "Practitioner/99999",
+                        "display": "Dra. Remedios"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 66,
+                    "unit": "mg/dL",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg/dL"
+                },
+                "interpretation": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v2/0078",
+                            "code": "N",
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "referenceRange": [
+                    {
+                        "high": {
+                            "value": 150,
+                            "unit": "mg/dL",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "mg/dL"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Practitioner/99999",
+            "resource": {
+                "resourceType": "Practitioner",
+                "id": "99999",
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://hl7.org/fhir/v2/0203",
+                                    "code": "MD",
+                                    "display": "Medical License number"
+                                }
+                            ]
+                        },
+                        "system": "http://www.ordemdosmedicos.pt",
+                        "value": "99999"
+                    }
+                ],
+                "name": [
+                    {
+                        "text": "Dra. Remedios"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Coverage/ADSE",
+            "resource": {
+                "resourceType": "Coverage",
+                "id": "ADSE",
+                "identifier": [
+                    {
+                        "system": "https://www.adse.pt/identifiers/adsenumber",
+                        "value": "1424034247823241232"
+                    }
+                ],
+                "payor": [
+                    {
+                        "reference": "Organization/ADSE"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Organization/9999999",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "9999999",
+                "identifier": [
+                    {
+                        "system": "http://spms.min-saude.pt/sges/identifiers/entity-id",
+                        "value": "9999999"
+                    }
+                ],
+                "name": "CS Exemplo"
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Organization/78e24234",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "78e24234",
+                "identifier": [
+                    {
+                        "system": "http://spms.min-saude.pt/sges/identifiers/providing-entity-id",
+                        "value": "78e24234"
+                    }
+                ],
+                "name": "LABORATÓRIO"
+            }
+        },
+        {
+            "fullUrl": "http://spms.min-saude.pt/fhir/Organization/ADSE",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "ADSE",
+                "identifier": [
+                    {
+                        "system": "http://spms.min-saude.pt/rnu/identifiers/financial-entity-id",
+                        "value": "999999"
+                    }
+                ],
+                "name": "ADSE"
+            }
+        }
+    ]
+}
