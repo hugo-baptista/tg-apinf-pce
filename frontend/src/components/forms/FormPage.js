@@ -1,29 +1,38 @@
+import { useContext, useState } from 'react';
+import { UserContext } from '../../static/UserContext';
 import {Form} from "protected-aidaforms";
 let json = require('../../static/jdt_analises.json');
 let style = require('../../static/style_analises.json');
-// import { UserContext } from './static/UserContext';
 
 var axios = require('axios');
 
-// const {user} = useContext(UserContext)
-
-const saveComposition = (composition) => {
-
-  axios.post('http://localhost:8080/form/submit', composition)
-    .then(res => {
-      alert(res.data)
-    })
-    .catch(err => {
-      console.log(err);
-    })
-};
-
-
 function FormPage() {
+  const {user} = useContext(UserContext);
+  const [response, setResponse] = useState('');
+
+  const saveComposition = (composition) => {
+    let message_body = {
+      current_user: {
+        username: user.username,
+        password: user.password
+      },
+      composition
+    }
+  
+    axios.post('http://localhost:8080/form/submit', message_body)
+      .then(res => {
+        setResponse(res.data.info);
+        alert(res.data.info);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  };
+
   const renderForm = (
     <div className="FormPage">
       <Form
-        onSubmit={(values, changedFields) => saveComposition({ values })}
+        onSubmit={(values, changedFields) => saveComposition(values)}
         onSave={(values, changedFields) => console.log("SAVEDVALUES: ", values, "CHANGED FIELDS: ", changedFields)}
         onCancel={status => console.log("CANCELLED:", status)}
         template={json}
@@ -54,29 +63,12 @@ function FormPage() {
         saveButtonDisabled={false}
         formDesign={JSON.stringify(style)}
       />
+      {response && (
+        <p>{response}</p>
+      )}
     </div>
   );
-  
   return renderForm;
 }
 
 export default FormPage;
-
-
-  //  referenceModel={[
-        //   {"itemName": "Número mecanográfico",
-        //   "item": "num_mecanografico",
-        //   "value": "123456",
-        //   "formVisible": true
-        //   },
-        //   {"itemName": "Número sequencial",
-        //   "item": "num_seq",
-        //   "value": 1347095,
-        //   "formVisible": true
-        //   },
-        //   {"itemName": "Nome",
-        //   "item": "Nome",
-        //   "value": "José da Silva Pinto",
-        //   "formVisible": true
-        //   }
-        // ]}

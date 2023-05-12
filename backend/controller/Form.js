@@ -1,10 +1,11 @@
-const express = require('express');
-const router = express.Router();
 const FormSchema = require('../model/Form');
 
 module.exports.newForm = async (composition) => {
     try {
-        let Form = new FormSchema(composition);
+        newForm = {
+            composition
+        }
+        let Form = new FormSchema(newForm);
         let response = await Form.save();
         return {success: true, response};
     } catch(err) {
