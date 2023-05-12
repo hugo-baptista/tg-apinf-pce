@@ -2,6 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 var UserModel = require('../model/User');
+var UserController = require('../controller/User');
+
+var user_types = require('../static/user_types');
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -23,6 +27,46 @@ router.put('/validate', (req, res) => {
           res.json({username_error: true});
         }
       })
+    }
+  })
+  .catch(err => {
+    res.json(err);
+  })
+});
+
+router.get('/types', function(req, res, next) {  
+  res.status(200).json(Array.from(user_types.keys()));
+});
+
+router.post('/create', async function(req, res, next) {
+  const {current_user} = req.body;
+  
+  const {username, password} = current_user;
+  UserModel.findOne({username, password})
+  .then(async user => {
+    if (user.permissions.create_users) {
+      const {new_user} = req.body;
+
+      const user_type = user_types.get(new_user.type);
+
+      let newUserResponse = await UserController.newUser(
+        new_user.username,
+        new_user.password,
+        new_user.name,
+        user_type.code,
+        user_type.designation,
+        user_type.permissions.create_users,
+        user_type.permissions.create_forms,
+        user_type.permissions.view_forms,
+        user_type.permissions.view_fhir)
+        
+      if (newUserResponse.success) {
+        res.status(200).json({success: true, info: "User adicionado com sucesso!"});
+      } else {
+        res.status(200).json({success: false, info: "Erro ao adicionar User!"});
+      };
+    } else {
+      res.status(200).json({success: false, info: "Não tem permissões!"});
     }
   })
   .catch(err => {

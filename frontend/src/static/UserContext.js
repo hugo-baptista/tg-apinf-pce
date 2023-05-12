@@ -13,5 +13,7 @@ métodos login e logout para alterar o user, e depois retornar
 <UserContext.Provider value={{user, login, logout}}>...</UserContext.Provider>
 
 Assim, nos ficheiros que queremos utilizar o user, o login ou o logout, basta fazer:
+import { useContext } from 'react';
+import { UserContext } from '../../static/UserContext';
 const {user, userLogin, userLogout} = useContext(UserContext)
 */
