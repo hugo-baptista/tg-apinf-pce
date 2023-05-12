@@ -35,4 +35,15 @@ module.exports = app;
 
 const createBaseUsers = require('./controller/createBaseUsers');
 
-createBaseUsers.createBaseUsers();
+
+// Criar utilizadores base caso não exista nenhum utilizador
+const UserModel = require('./model/User');
+UserModel.findOne()
+.then(user => {
+  if (!user) {
+    createBaseUsers.createBaseUsers();
+  }
+})
+.catch(err => {
+  console.log(err);
+});
