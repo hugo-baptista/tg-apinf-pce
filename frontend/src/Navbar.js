@@ -65,13 +65,24 @@ function Navbar() {
 
           {/* Lado Esquerdo */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Link to="/form">
-              <Button
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                  Formulário
-              </Button>
-            </Link>
+            {user && user.permissions.create_users && (
+              <Link to="/createuser">
+                <Button
+                    sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                    Criar novo utilizador
+                </Button>
+              </Link>
+            )}
+            {user && user.permissions.create_forms && (
+              <Link to="/form">
+                <Button
+                    sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                    Formulário
+                </Button>
+              </Link>
+            )}
           </Box>
 
           {/* Lado direito */}

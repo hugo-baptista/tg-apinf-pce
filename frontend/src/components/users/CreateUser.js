@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { UserContext } from '../../static/UserContext';
-import { Box, Button, TextField } from '@mui/material';
+import { Box, Button, FormControl, InputLabel, Select, TextField } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import ClearIcon from '@mui/icons-material/Clear';
 import AddIcon from '@mui/icons-material/Add';
@@ -76,28 +76,22 @@ const CreateUser = () => {
       )}
       {!loading && (
         <div>
-          <TextField id='uname' placeholder="Username" variant="outlined" /> <br /> <br />
-          <TextField id='pass' placeholder="Password" variant="outlined" /> <br /> <br />
-          <TextField id='name' placeholder="Nome" variant="outlined" />
-          <Box
-            component="form"
-            sx={{
-                '& .MuiTextField-root': { m: 1, width: '25ch' },
-            }}
-            noValidate
-            autoComplete="off">
-            <TextField
+          <TextField id='uname' label="Username" type="search" variant="filled" /> <br /> <br />
+          <TextField id='pass' label="Password" type="search" variant="filled" /> <br /> <br />
+          <TextField id='name' label="Nome" type="search" variant="filled" /> <br /> <br />
+          <FormControl variant="filled" sx={{ minWidth: 200 }}>
+            <InputLabel id="demo-simple-select-filled-label">Tipo de Utilizador</InputLabel>
+            <Select
+              labelId="demo-simple-select-filled-label"
               id="type"
-              select
-              label="Tipo de utilizador"
-              >
+            >
               {userTypes.map((userType) => (
-                <MenuItem key={userType} value={userType}>
+                <MenuItem key={userType} value={userType} variant="filled">
                   {userType}
                 </MenuItem>
               ))}
-            </TextField>
-          </Box>
+            </Select>
+          </FormControl><br /> <br />
           <Button variant="outlined" size="large" onClick={handleClear} startIcon={<ClearIcon />}>
               Limpar
           </Button>
