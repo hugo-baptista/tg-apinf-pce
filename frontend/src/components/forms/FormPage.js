@@ -1,5 +1,5 @@
 import {Form} from "protected-aidaforms";
-let json = require('../../archetypes/jdt_analises.json');
+let json = require('../../static/jdt_analises.json');
 let style = require('../../style_analises.json');
 // import { UserContext } from './static/UserContext';
 
