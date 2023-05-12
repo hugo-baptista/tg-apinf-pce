@@ -77,6 +77,9 @@ router.post('/create', async function(req, res, next) {
           res.status(200).json({success: false, info: "Erro ao adicionar User!"});
         };
       })
+      .catch(err => {
+        res.json(err);
+      })
     } else {
       res.status(200).json({success: false, info: "Não tem permissões!"});
     }
