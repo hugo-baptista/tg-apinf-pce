@@ -26,7 +26,7 @@ const CreateUser = () => {
     document.getElementById('uname').value = '';
     document.getElementById('pass').value = '';
     document.getElementById('name').value = '';
-    document.getElementById("type").innerHTML = '';
+    document.getElementById('type').innerHTML = '';
   };
 
   const handleSubmission = () => {

@@ -120,9 +120,11 @@ function Navbar() {
                     <MenuItem>
                       <Typography textAlign="center">Perfil</Typography>
                     </MenuItem>
-                    <MenuItem onClick={handleLogout}>
-                      <Typography textAlign="center">Logout</Typography>
-                    </MenuItem>
+                    <Link to='/' onClick={handleLogout}>
+                      <MenuItem>
+                        <Typography textAlign="center">Logout</Typography>
+                      </MenuItem>
+                    </Link>
                   </Menu>
                 </Box>
               </div> 
