@@ -14,8 +14,6 @@ import MenuItem from '@mui/material/MenuItem';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import { UserContext } from "./static/UserContext";
 
-const settings = ['Profile', 'Logout'];
-
 function Navbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const {user, setUser} = React.useContext(UserContext);

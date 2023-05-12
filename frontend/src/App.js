@@ -1,12 +1,12 @@
+import { useState } from "react";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { UserContext } from "./static/UserContext";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import NotFound from "./NotFound";
 import Login from "./components/users/Login";
 import CreateUser from "./components/users/CreateUser";
 import Form from "./components/forms/FormPage";
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import { useState } from "react";
-import { UserContext } from "./static/UserContext";
 
 function App() {
   const [user, setUser] = useState(false);

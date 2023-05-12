@@ -1,9 +1,7 @@
-import { useContext, useState } from 'react';
 import { Box, Button, TextField } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import ClearIcon from '@mui/icons-material/Clear';
 import AddIcon from '@mui/icons-material/Add';
-import { UserContext } from '../../static/UserContext';
 
 var axios = require('axios');
 
