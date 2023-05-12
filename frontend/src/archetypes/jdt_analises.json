@@ -5211,7 +5211,7 @@
               },
               "occurrences": {
                 "lowerOccurrences": 0,
-                "upperOccurrences": 1
+                "upperOccurrences": "*"
               },
               "path": "[openEHR-EHR-COMPOSITION.report-result.v1]/[openEHR-EHR-ACTION.procedure.v1]/[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]",
               "ruleMandatory": [],

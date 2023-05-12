@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import Home from "./Home";
 import Login from "./Login";
+import CreateUser from "./CreateUser";
 import NotFound from "./NotFound";
 import Form from "./FormPage";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
@@ -25,6 +26,9 @@ function App() {
               </Route>
               <Route path="/form">
                 <Form></Form>
+              </Route>
+              <Route path="/adicionar">
+                <CreateUser></CreateUser>
               </Route>
               <Route path="*">
                 <NotFound></NotFound>

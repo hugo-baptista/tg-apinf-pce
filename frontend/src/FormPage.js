@@ -1,21 +1,21 @@
 import {Form} from "protected-aidaforms";
 let json = require('./archetypes/jdt_analises.json');
 let style = require('./style_analises.json');
+// import { UserContext } from './static/UserContext';
+
+var axios = require('axios');
+
+// const {user, setUser} = useContext(UserContext)
 
 const saveComposition = (composition) => {
-  const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(composition)
-  };
-  
-  return fetch('/api/form-submissions', requestOptions)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    });
+
+  axios.post('http://localhost:8080/form/submit', composition)
+    .then(res => {
+      alert(res.data)
+    })
+    .catch(err => {
+      console.log(err);
+    })
 };
 
 
@@ -23,7 +23,7 @@ function FormPage() {
   const renderForm = (
     <div className="FormPage">
       <Form
-        onSubmit={(values, changedFields) => saveComposition({ values, changedFields })}
+        onSubmit={(values, changedFields) => saveComposition({ values })}
         onSave={(values, changedFields) => console.log("SAVEDVALUES: ", values, "CHANGED FIELDS: ", changedFields)}
         onCancel={status => console.log("CANCELLED:", status)}
         template={json}
@@ -32,7 +32,7 @@ function FormPage() {
         editMode={true}
         professionalTasks={["Registar Pedido", "Consultar Pedido","Anular Pedido"]}
         canSubmit={true}
-        canSave={true}
+        canSave={false}
         canCancel={true}
         patientData={{
           "numSequencial": 1904865,
