@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import { UserContext } from "./static/UserContext";
 import Navbar from "./Navbar";
@@ -9,10 +9,28 @@ import CreateUser from "./components/users/CreateUser";
 import Form from "./components/forms/FormPage";
 
 function App() {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(() => {
+    const storedUser = localStorage.getItem('user');
+    return storedUser
+      ? JSON.parse(storedUser)
+      : false;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('user', JSON.stringify(user));
+  }, [user]);
+
+  const userLogin = (userData) => {
+    setUser(userData);
+  };
+
+  const userLogout = () => {
+    setUser(false);
+  };
+
 
   return (
-    <UserContext.Provider value={{user, setUser}}>
+    <UserContext.Provider value={{user, userLogin, userLogout}}>
       <Router>
         <div className="App">
           <Navbar/>
