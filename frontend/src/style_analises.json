@@ -1,0 +1,106 @@
+{
+    "datatypes": {},
+    "fileExtensions": {},
+    "fileMaxSize": {},
+    "fontAlignment": {
+      "fieldTitle": "justify-left",
+      "formTitle": "justify-center",
+      "sectionTitle": "justify-left"
+    },
+    "fontLetters": {
+      "button": "normal-case",
+      "fieldTitle": "normal-case",
+      "formTitle": "normal-case",
+      "sectionTitle": "normal-case"
+    },
+    "fontSize": {
+      "button": "12px",
+      "field": "11px",
+      "fieldTitle": "11px",
+      "formTitle": "16px",
+      "header": "10px",
+      "sectionTitle": "12px"
+    },
+    "fontStyle": {
+      "button": [],
+      "fieldTitle": [
+        "font-bold"
+      ],
+      "formTitle": [],
+      "header": [],
+      "sectionTitle": []
+    },
+    "formOrder": {
+      "items.0.0": 1,
+      "items.0.0.items.0": 2,
+      "items.0.0.items.0.items.0": 3,
+      "items.0.0.items.0.items.1": 7,
+      "items.0.0.items.0.items.1.items.0": 8,
+      "items.0.0.items.0.items.2": 5,
+      "items.0.0.items.0.items.2.items.0": 4,
+      "items.0.0.items.0.items.3": 6,
+      "items.0.1": 9,
+      "items.0.1.items.0": 10,
+      "items.0.1.items.1": 11,
+      "items.0.1.items.2": 12,
+      "items.0.1.items.2.items.0": 13,
+      "items.0.1.items.2.items.1": 14,
+      "items.0.1.items.2.items.2": 15,
+      "items.0.1.items.2.items.2.items.0": 16,
+      "items.0.1.items.2.items.2.items.1": 17,
+      "items.0.1.items.2.items.3": 18,
+      "items.0.1.items.3": 19,
+      "items.0.1.items.4": 20,
+      "items.0.1.items.5": 21,
+      "items.0.1.items.5.items.0": 22,
+      "items.0.1.items.5.items.1": 23
+    },
+    "formTitle": "AIEB - MCDs analises",
+    "hsizes": {
+      "items.0.0.items.0": "100%",
+      "items.0.0.items.0.items.0": "33.333333%",
+      "items.0.0.items.0.items.1": "100%",
+      "items.0.0.items.0.items.2": "33.333333%",
+      "items.0.0.items.0.items.3": "33.333333%",
+      "items.0.1.items.0": "50%",
+      "items.0.1.items.1": "50%",
+      "items.0.1.items.2.items.0": "50%",
+      "items.0.1.items.2.items.1": "50%",
+      "items.0.1.items.2.items.2.items.0": "50%",
+      "items.0.1.items.2.items.2.items.1": "50%",
+      "items.0.1.items.5.items.0": "50%",
+      "items.0.1.items.5.items.1": "50%"
+    },
+    "limitCharacters": {},
+    "sectionArchetype": {},
+    "showSectionTitle": {
+      "items.0.0": false,
+      "items.0.0.items.0": true,
+      "items.0.0.items.0.items.1": true,
+      "items.0.0.items.0.items.2": false,
+      "items.0.1": true,
+      "items.0.1.items.2": true,
+      "items.0.1.items.2.items.2": true,
+      "items.0.1.items.5": true
+    },
+    "textHeight": {
+      "items-0-0-items-0-items-0-value": 82,
+      "items-0-0-items-0-items-1-items-0-value": 44,
+      "items-0-1-items-2-items-1-value": 42,
+      "items-0-1-items-2-items-2-items-0-value": 37,
+      "items-0-1-items-2-items-2-items-1-value": 37,
+      "items-0-1-items-3-value": 82,
+      "items-0-1-items-4-value": 82,
+      "items-0-1-items-5-items-0-value": 39,
+      "items-0-1-items-5-items-1-value": 43
+    },
+    "themeColor": "azul",
+    "themePalette": {
+      "$100": "#e4f1fc",
+      "$200": "#aad7f8",
+      "$300": "#8dcaf6",
+      "$400": "#63b3ed",
+      "$500": "#4299e1",
+      "$600": "#3573a5"
+    }
+  }
