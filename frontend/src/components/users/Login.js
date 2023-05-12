@@ -7,7 +7,7 @@ var axios = require('axios');
 function Login() {
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const {user, setUser} = useContext(UserContext);
+    const {user, userLogin} = useContext(UserContext);
   
     const handleSubmit = (event) => {
       event.preventDefault();
@@ -23,7 +23,7 @@ function Login() {
       .then(res => {
         if (res.data.user) {
           console.log('user: ' + res.data);
-          setUser(res.data.user)
+          userLogin(res.data.user)
           setIsSubmitted(true);
           console.log(user);
         } else if (res.data.password_error) {

@@ -16,7 +16,7 @@ import { UserContext } from "./static/UserContext";
 
 function Navbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const {user, setUser} = React.useContext(UserContext);
+  const {user, userLogout} = React.useContext(UserContext);
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -27,7 +27,7 @@ function Navbar() {
   };
 
   const handleLogout = () => {
-    setUser(false);
+    userLogout();
   }
 
   return (

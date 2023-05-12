@@ -5,7 +5,7 @@ let style = require('../../static/style_analises.json');
 
 var axios = require('axios');
 
-// const {user, setUser} = useContext(UserContext)
+// const {user} = useContext(UserContext)
 
 const saveComposition = (composition) => {
 

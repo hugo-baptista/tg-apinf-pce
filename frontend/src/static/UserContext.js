@@ -8,10 +8,10 @@ do website.
 
 Vai ser utilizado para manter os dados do utilizador após o login no ficheiro App.js
 
-Para tal, basta criar um useState (const [user, setUser] = useState(false)) e depois retornar
-<UserContext.Provider value={{user, setUser}}>...</UserContext.Provider>
+Para tal, basta criar um useState (const [user, userLogin, userLogout] = useState(false)), bem como os
+métodos login e logout para alterar o user, e depois retornar
+<UserContext.Provider value={{user, login, logout}}>...</UserContext.Provider>
 
-Assim, nos ficheiros que queremos utilizar o user ou o setUser, basta fazer:
-
-const {user, setUser} = useContext(UserContext)
+Assim, nos ficheiros que queremos utilizar o user, o login ou o logout, basta fazer:
+const {user, userLogin, userLogout} = useContext(UserContext)
 */
