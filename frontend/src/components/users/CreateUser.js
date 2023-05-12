@@ -26,7 +26,7 @@ const CreateUser = () => {
     document.getElementById('uname').value = '';
     document.getElementById('pass').value = '';
     document.getElementById('name').value = '';
-    document.getElementById('type').innerHTML = '';
+    document.getElementById('code').innerHTML = '';
   };
 
   const handleSubmission = () => {
@@ -39,7 +39,7 @@ const CreateUser = () => {
           username: document.getElementById("uname").value,
           password: document.getElementById("pass").value,
           name: document.getElementById("name").value,
-          type: document.getElementById("type").innerHTML
+          code: document.getElementById("code").innerHTML.split(" ")[0]
       }
     }
 
@@ -53,20 +53,6 @@ const CreateUser = () => {
     .catch(err => {
       console.log(err);
     })
-
-    const new_uname = document.getElementById("uname").value;
-    const new_pass = document.getElementById("pass").value;
-    const new_name = document.getElementById("name").value;
-    const new_type = document.getElementById("type").innerHTML;
-
-    const new_user = {
-      username: new_uname,
-      password: new_pass,
-      name: new_name,
-      type: new_type
-    }
-
-    console.log(new_user);
   };
 
   return(
@@ -83,11 +69,11 @@ const CreateUser = () => {
             <InputLabel id="demo-simple-select-filled-label">Tipo de Utilizador</InputLabel>
             <Select
               labelId="demo-simple-select-filled-label"
-              id="type"
+              id="code"
             >
               {userTypes.map((userType) => (
-                <MenuItem key={userType} value={userType} variant="filled">
-                  {userType}
+                <MenuItem key={userType.code} value={userType.code} variant="filled">
+                  {userType.code + " - " + userType.designation}
                 </MenuItem>
               ))}
             </Select>

@@ -1,4 +1,15 @@
 const UserController = require('./User')
+const UserTypeController = require('./UserType')
+
+module.exports.createBaseTypes = async () => {
+    await UserTypeController.newUserType(224608005, 'Administrative healthcare staff', true, false, false, false)
+
+    await UserTypeController.newUserType(18850004, 'Laboratory hematologist', false, true, true, true)
+
+    await UserTypeController.newUserType(61246008, 'Laboratory medicine specialist', false, true, true, true)
+
+    await UserTypeController.newUserType(224529009, 'Clinical assistant', false, false, true, true)
+}
 
 module.exports.createBaseUsers = async () => {
     // Admin

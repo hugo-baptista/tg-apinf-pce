@@ -33,15 +33,26 @@ app.use('/form', formRouter);
 
 module.exports = app;
 
-const createBaseUsers = require('./controller/createBaseUsers');
+const startingData = require('./controller/startingData');
 
+// Criar tipos de utilizadores caso não exista nenhum
+const UserTypeModel = require('./model/UserType');
+UserTypeModel.findOne()
+.then(user_type => {
+  if (!user_type) {
+    startingData.createBaseTypes();
+  }
+})
+.catch(err => {
+  console.log(err);
+});
 
 // Criar utilizadores base caso não exista nenhum utilizador
 const UserModel = require('./model/User');
 UserModel.findOne()
 .then(user => {
   if (!user) {
-    createBaseUsers.createBaseUsers();
+    startingData.createBaseUsers();
   }
 })
 .catch(err => {
