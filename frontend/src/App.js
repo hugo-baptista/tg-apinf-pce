@@ -34,25 +34,31 @@ function App() {
       <Router>
         <div className="App">
           <Navbar/>
-          <div className="content">
-            <Switch>
-              <Route exact path="/">
+          <Switch>
+            <Route exact path="/">
+              <div className="content">
                 <Home></Home>
-              </Route>
-              <Route path="/login">
+              </div>
+            </Route>
+            <Route path="/login">
+              <div className="content">
                 <Login></Login>
-              </Route>
-              <Route path="/form">
-                <Form></Form>
-              </Route>
-              <Route path="/createuser">
+              </div>
+            </Route>
+            <Route path="/form">
+              <Form></Form>
+            </Route>
+            <Route path="/createuser">
+              <class className="content">
                 <CreateUser></CreateUser>
-              </Route>
-              <Route path="*">
+              </class>
+            </Route>
+            <Route path="*">
+              <class className="content">
                 <NotFound></NotFound>
-              </Route>
-            </Switch>
-          </div>
+              </class>
+            </Route>
+          </Switch>
         </div>
       </Router>
     </UserContext.Provider>

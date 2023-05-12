@@ -48,7 +48,7 @@ function Navbar() {
             <Typography
               variant="h6"
               noWrap
-              component="a"
+              component="p"
               sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
@@ -120,11 +120,9 @@ function Navbar() {
                     <MenuItem>
                       <Typography textAlign="center">Perfil</Typography>
                     </MenuItem>
-                    <Link to='/' onClick={handleLogout}>
-                      <MenuItem>
-                        <Typography textAlign="center">Logout</Typography>
-                      </MenuItem>
-                    </Link>
+                    <MenuItem onClick={handleLogout}>
+                      <Typography textAlign="center">Logout</Typography>
+                    </MenuItem>
                   </Menu>
                 </Box>
               </div> 

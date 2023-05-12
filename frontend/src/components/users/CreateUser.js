@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { UserContext } from '../../static/UserContext';
-import { Box, Button, FormControl, InputLabel, Select, TextField } from '@mui/material';
+import { Button, FormControl, InputLabel, Select, TextField } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import ClearIcon from '@mui/icons-material/Clear';
 import AddIcon from '@mui/icons-material/Add';
@@ -12,6 +12,8 @@ const CreateUser = () => {
   const [loading, setLoading] = useState(true);
   const [userTypes, setUserTypes] = useState([]);
   const [response, setResponse] = useState('');
+  const [code, setCode] = useState('');
+  const [designation, setDesignation] = useState('');
 
   if (loading) {
     axios.get('http://localhost:8080/users/types')
@@ -26,7 +28,14 @@ const CreateUser = () => {
     document.getElementById('uname').value = '';
     document.getElementById('pass').value = '';
     document.getElementById('name').value = '';
-    document.getElementById('code').innerHTML = '';
+    setCode('');
+    setDesignation('');
+    // document.getElementById('designation').innerHTML = '';
+  };
+  
+  const handleChange = (info) => {
+    setDesignation(info.designation);
+    setCode(info.code);
   };
 
   const handleSubmission = () => {
@@ -39,7 +48,7 @@ const CreateUser = () => {
           username: document.getElementById("uname").value,
           password: document.getElementById("pass").value,
           name: document.getElementById("name").value,
-          code: document.getElementById("code").innerHTML.split(" ")[0]
+          code: document.getElementById("code").value
       }
     }
 
@@ -65,23 +74,29 @@ const CreateUser = () => {
           <TextField id='uname' label="Username" type="search" variant="filled" /> <br /> <br />
           <TextField id='pass' label="Password" type="search" variant="filled" /> <br /> <br />
           <TextField id='name' label="Nome" type="search" variant="filled" /> <br /> <br />
-          <FormControl variant="filled" sx={{ minWidth: 200 }}>
-            <InputLabel id="demo-simple-select-filled-label">Tipo de Utilizador</InputLabel>
-            <Select
-              labelId="demo-simple-select-filled-label"
-              id="code"
-            >
-              {userTypes.map((userType) => (
-                <MenuItem key={userType.code} value={userType.code} variant="filled">
-                  {userType.code + " - " + userType.designation}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl><br /> <br />
-          <Button variant="outlined" size="large" onClick={handleClear} startIcon={<ClearIcon />}>
+          <TextField id='code' label="Código" type="search" variant="filled"
+            sx={{ marginRight: 1 }} InputProps={{readOnly: true}} value={code}
+          />
+            <FormControl variant="filled" sx={{ minWidth: 200 }}>
+              <InputLabel id="demo-simple-select-filled-label">Tipo de Utilizador</InputLabel>
+              <Select
+                labelId="demo-simple-select-filled-label"
+                id="designation"
+                value={designation}
+              >
+                {userTypes.map((userType) => (
+                  <MenuItem key={userType.code} value={userType.designation} variant="filled" onClick={() => handleChange({code: userType.code, designation: userType.designation})}>
+                    {userType.designation}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl><br /> <br />
+          <Button variant="outlined" size="large" onClick={handleClear} startIcon={<ClearIcon />}
+            sx={{ marginRight:1, minWidth: 200 }}>
               Limpar
           </Button>
-          <Button variant="contained" size="large" onClick={handleSubmission} endIcon={<AddIcon />}>
+          <Button variant="contained" size="large" onClick={handleSubmission} endIcon={<AddIcon />}
+            sx={{ marginRight:1, minWidth: 200 }}>
               Adicionar
           </Button>
         </div>
