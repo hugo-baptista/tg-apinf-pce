@@ -1,9 +1,9 @@
 import Navbar from "./Navbar";
 import Home from "./Home";
-import Login from "./Login";
-import CreateUser from "./CreateUser";
 import NotFound from "./NotFound";
-import Form from "./FormPage";
+import Login from "./components/users/Login";
+import CreateUser from "./components/users/CreateUser";
+import Form from "./components/forms/FormPage";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import { useState } from "react";
 import { UserContext } from "./static/UserContext";
@@ -27,7 +27,7 @@ function App() {
               <Route path="/form">
                 <Form></Form>
               </Route>
-              <Route path="/adicionar">
+              <Route path="/createuser">
                 <CreateUser></CreateUser>
               </Route>
               <Route path="*">

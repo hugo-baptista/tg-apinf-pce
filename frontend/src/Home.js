@@ -4,8 +4,6 @@ import AssessmentIcon from '@mui/icons-material/Assessment';
 import { IconContext } from "react-icons";
 
 const Home = () => {
-    const {user, setUser} = useContext(UserContext);
-
     return(
         <div>
             <p>Placeholder</p>
