@@ -49,14 +49,14 @@ function App() {
               <Form></Form>
             </Route>
             <Route path="/createuser">
-              <class className="content">
+              <div className="content">
                 <CreateUser></CreateUser>
-              </class>
+              </div>
             </Route>
             <Route path="*">
-              <class className="content">
+              <div className="content">
                 <NotFound></NotFound>
-              </class>
+              </div>
             </Route>
           </Switch>
         </div>

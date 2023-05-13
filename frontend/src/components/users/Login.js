@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { Button, TextField } from '@mui/material';
 import { UserContext } from '../../static/UserContext';
+import LoginIcon from '@mui/icons-material/Login';
 
 var axios = require('axios');
 
@@ -37,22 +38,15 @@ function Login() {
 
   return (
     <div className="login-form">
-      <TextField
-        id="uname"
-        label="Username"
-        type="search"
-        variant="filled"
-      /><br /><br />
+      <TextField id="uname" label="Username" type="search" variant="filled"
+      /><br /> <br />
       {renderErrorMessage("uname_wrong")}
-      <TextField
-        id="pass"
-        label="Password"
-        type="password"
-        autoComplete="current-password"
-        variant="filled"
-      /><br /><br />
+      <TextField id="pass" label="Password" type="password" variant="filled" autoComplete="current-password"
+      /><br /> <br />
       {renderErrorMessage("pass_wrong")}
-      <Button variant="contained" onClick={handleSubmit}>
+      <Button variant="contained"  onClick={handleSubmit} endIcon={<LoginIcon/>}
+        sx={{ marginRight:1, minWidth: 200 }} size="large"
+      >
         Login
       </Button>
       {renderErrorMessage("success")}
