@@ -19,7 +19,7 @@ function CreateForm() {
       composition
     }
   
-    axios.post('http://localhost:8080/form/submit', message_body)
+    axios.post('http://localhost:8080/forms/submit', message_body)
       .then(res => {
         setResponse(res.data.info);
         alert(res.data.info);
