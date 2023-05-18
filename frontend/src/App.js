@@ -36,27 +36,19 @@ function App() {
           <Navbar/>
           <Switch>
             <Route exact path="/">
-              <div className="content">
-                <Home></Home>
-              </div>
+              <Home/>
             </Route>
             <Route path="/login">
-              <div className="content">
-                <Login></Login>
-              </div>
+              <Login/>
             </Route>
             <Route path="/form">
-              <Form></Form>
+              <Form/>
             </Route>
             <Route path="/createuser">
-              <div className="content">
-                <CreateUser></CreateUser>
-              </div>
+              <CreateUser/>
             </Route>
             <Route path="*">
-              <div className="content">
-                <NotFound></NotFound>
-              </div>
+              <NotFound/>
             </Route>
           </Switch>
         </div>

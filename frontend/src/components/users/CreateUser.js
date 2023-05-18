@@ -65,7 +65,7 @@ const CreateUser = () => {
   };
 
   return(
-    <div>
+    <div className="content">
       {loading && (
         <p>Loading...</p>
       )}
