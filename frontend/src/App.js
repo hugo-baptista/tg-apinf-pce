@@ -6,7 +6,7 @@ import Home from "./Home";
 import NotFound from "./NotFound";
 import Login from "./components/users/Login";
 import CreateUser from "./components/users/CreateUser";
-import Form from "./components/forms/FormPage";
+import CreateForm from "./components/forms/CreateForm";
 
 function App() {
   const [user, setUser] = useState(() => {
@@ -42,7 +42,7 @@ function App() {
               <Login/>
             </Route>
             <Route path="/form">
-              <Form/>
+              <CreateForm/>
             </Route>
             <Route path="/createuser">
               <CreateUser/>

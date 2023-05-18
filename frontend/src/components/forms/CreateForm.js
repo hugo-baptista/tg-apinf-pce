@@ -6,7 +6,7 @@ let style = require('../../static/style_analises.json');
 
 var axios = require('axios');
 
-function FormPage() {
+function CreateForm() {
   const {user} = useContext(UserContext);
   const [response, setResponse] = useState('');
 
@@ -71,4 +71,4 @@ function FormPage() {
   return renderForm;
 }
 
-export default FormPage;
+export default CreateForm;
