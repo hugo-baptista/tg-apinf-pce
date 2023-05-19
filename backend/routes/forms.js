@@ -7,18 +7,40 @@ var FormController = require('../controller/Form');
 
 const fs = require('fs');
 
+// Passar a composition de string para JSON
+function parseNestedJSON (jsonString) {
+  let parsedJSON = JSON.parse(jsonString);
+
+  const recursiveParse = (jsonObject) => {
+    for (let key in jsonObject) {
+      if (typeof jsonObject[key] === 'string') {
+        try {
+          jsonObject[key] = JSON.parse(jsonObject[key]);
+        } catch (error) {
+          // Se não dá para fazer o Parse, então deixa o valor como está
+        }
+      } else if (typeof jsonObject[key] === 'object') {
+        recursiveParse(jsonObject[key]);
+      }
+    }
+  };
+
+  recursiveParse(parsedJSON);
+  return(parsedJSON);
+}
+
 router.post('/submit', async (req, res) => {
   const {current_user} = req.body;
   
   const {username, password} = current_user;
   UserModel.findOne({username, password})
   .then(async user => {
-    if (user.permissions.create_forms) {
+    if (user.permissions.create_forms_fhir) {
       const {composition} = req.body;
-      console.log(composition);
-      
 
-      let newFormResponse = await FormController.newForm(JSON.parse(composition));
+      const composition_json = parseNestedJSON(composition)
+
+      let newFormResponse = await FormController.newForm(composition_json);
       if (newFormResponse.success) {
         res.status(200).json({success: true, info: "FormComposition adicionado com sucesso!"});
       } else {
