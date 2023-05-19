@@ -6,6 +6,7 @@ import Home from "./Home";
 import NotFound from "./NotFound";
 import Login from "./components/users/Login";
 import CreateUser from "./components/users/CreateUser";
+import ListForm from "./components/forms/ListForm";
 import CreateForm from "./components/forms/CreateForm";
 
 function App() {
@@ -38,13 +39,16 @@ function App() {
             <Route exact path="/">
               <Home/>
             </Route>
-            <Route path="/login">
+            <Route exact path="/login">
               <Login/>
             </Route>
-            <Route path="/form">
+            <Route exact path="/forms">
+              <ListForm/>
+            </Route>
+            <Route exact path="/forms/create">
               <CreateForm/>
             </Route>
-            <Route path="/createuser">
+            <Route exact path="/users/create">
               <CreateUser/>
             </Route>
             <Route path="*">

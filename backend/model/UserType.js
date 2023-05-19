@@ -2,7 +2,7 @@ var mongoose=require('mongoose');
 var Schema = mongoose.Schema;
 
 var UserTypeSchema =  new Schema({
-    code: {type: Number, required:true},
+    code: {type: Number, required:true, unique: true},
     designation: {type: String, required:true},
     permissions: {
         create_users: {type: Boolean, required:true},

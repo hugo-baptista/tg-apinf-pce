@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 var { v4: uuidv4 } = require('uuid');
 
 var UserSchema =  new Schema({
-    id: {type: String, default: uuidv4()},
+    id: {type: String, default: uuidv4(), unique: true},
     username: {type: String, required:true, unique:true},
     password: {type: String, required:true},
     name: {type: String, required:true},
