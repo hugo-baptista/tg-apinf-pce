@@ -6,9 +6,8 @@ var UserTypeSchema =  new Schema({
     designation: {type: String, required:true},
     permissions: {
         create_users: {type: Boolean, required:true},
-        create_forms: {type: Boolean, required:true},
+        create_forms_fhir: {type: Boolean, required:true},
         view_forms: {type: Boolean, required:true},
-        create_fhir: {type: Boolean, required:true},
         view_fhir: {type: Boolean, required:true}
     }
 })

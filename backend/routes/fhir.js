@@ -12,7 +12,7 @@ router.post('/create', async (req, res) => {
   const {username, password} = current_user;
   UserModel.findOne({username, password})
   .then(async user => {
-    if (user.permissions.create_fhir) {
+    if (user.permissions.create_forms_fhir) {
         const {composition_id} = req.body;
         FormModel.findOne({id: composition_id})
         .then(async form => {

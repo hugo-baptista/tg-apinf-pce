@@ -67,7 +67,7 @@ router.post('/create', async function(req, res, next) {
           user_type.code,
           user_type.designation,
           user_type.permissions.create_users,
-          user_type.permissions.create_forms,
+          user_type.permissions.create_forms_fhir,
           user_type.permissions.view_forms,
           user_type.permissions.view_fhir)
           

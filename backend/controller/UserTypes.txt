@@ -2,13 +2,13 @@
 (permission Y(yes)/N(no))
 
 Administrative healthcare staff     224608005
-create_users Y;     create_forms N;     view_forms N;   view_fhir N
+create_users Y;     create_forms_fhir N;     view_forms N;   view_fhir N
 
 Laboratory hematologist             18850004
-create_users N;     create_forms Y;     view_forms Y;   view_fhir Y
+create_users N;     create_forms_fhir Y;     view_forms Y;   view_fhir Y
 
 Laboratory medicine specialist      61246008
-create_users N;     create_forms Y;     view_forms Y;   view_fhir Y
+create_users N;     create_forms_fhir Y;     view_forms Y;   view_fhir Y
 
 Clinical assistant                  224529009
-create_users N;     create_forms N;     view_forms Y;   view_fhir Y
+create_users N;     create_forms_fhir N;     view_forms Y;   view_fhir Y

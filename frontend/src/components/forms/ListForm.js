@@ -38,7 +38,7 @@ function ListForm() {
 
   return (
     <div>
-      {user && user.permissions.create_forms && (
+      {user && user.permissions.create_forms_fhir && (
         <Link to="/forms/create">
           <Button startIcon={<AddIcon/>} color='success' variant='contained'
             sx={{ my: 2 }}
