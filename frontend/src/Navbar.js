@@ -83,6 +83,15 @@ function Navbar() {
                 </Button>
               </Link>
             )}
+            {user && user.permissions.view_fhir && (
+              <Link to="/fhir">
+                <Button
+                    sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                    Fhir
+                </Button>
+              </Link>
+            )}
           </Box>
 
           {/* Lado direito */}

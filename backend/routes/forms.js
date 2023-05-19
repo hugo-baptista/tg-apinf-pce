@@ -5,6 +5,8 @@ var UserModel = require('../model/User')
 var FormModel = require('../model/Form');
 var FormController = require('../controller/Form');
 
+const fs = require('fs');
+
 router.post('/submit', async (req, res) => {
   const {current_user} = req.body;
   
@@ -14,8 +16,9 @@ router.post('/submit', async (req, res) => {
     if (user.permissions.create_forms) {
       const {composition} = req.body;
       console.log(composition);
+      
 
-      let newFormResponse = await FormController.newForm(composition);
+      let newFormResponse = await FormController.newForm(JSON.parse(composition));
       if (newFormResponse.success) {
         res.status(200).json({success: true, info: "FormComposition adicionado com sucesso!"});
       } else {

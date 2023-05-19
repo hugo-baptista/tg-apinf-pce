@@ -11,6 +11,8 @@ function CreateForm() {
   const [response, setResponse] = useState('');
 
   const saveComposition = (composition) => {
+    console.log(composition);
+
     let message_body = {
       current_user: {
         username: user.username,

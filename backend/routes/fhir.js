@@ -27,7 +27,7 @@ router.post('/create', async (req, res) => {
                 fhir_message.meta.lastUpdated = current_date;
 
                 // Paciente - ID, Nome, Género, Data Nascimento, Morada
-                // fhir_message.entry[1].resource.name[0].text = composition[items.0.0.items.0.items.0];
+                // fhir_message.entry[1].resource.name[0].text = composition.items.0.0.items.0.items.0;
 
                 // Diagnostic Report - Categoria, Código, Conclusão
 
