@@ -20,22 +20,36 @@ router.post('/create', async (req, res) => {
                 const {composition} = form;
                 var fhir_message = require('../static/fhir_analises.json');
 
-                    // Alterar informação na mensagem FHIR:
+                // Alterar informação na mensagem FHIR:
+                const current_date = new Date();
+                
+                // Paciente - ID, Nome, Género, Data Nascimento, Morada
+                fhir_message.entry[1].resource.name[0].text = composition["items.0.0.items.0.items.0.value"].blocks[0].text;
+                fhir_message.entry[1].resource.gender = composition["items.0.0.items.0.items.3.value"].text;
+                fhir_message.entry[1].resource.birthDate = composition["items.0.0.items.0.items.2.items.0.value.date"];
+                fhir_message.entry[1].resource.address[0].text = composition["items.0.0.items.0.items.1.items.0.value"].blocks[0].text;
+                
+                // Diagnostic Report - Categoria, Código, Conclusão
+                fhir_message.entry[2].resource.category.coding[1].code = composition["items.0.1.items.0.value"].code.replace(/local_terms::/g, "");
+                fhir_message.entry[2].resource.category.coding[1].display = composition["items.0.1.items.0.value"].text;
+                fhir_message.entry[2].resource.code.coding = [];
+                for (let i=0; i<composition["items.0.1.items.1.value"].length; i++) {
+                  fhir_message.entry[2].resource.code.coding.push({
+                    code: composition["items.0.1.items.1.value"][i].code.replace(/local_terms::/g, ""),
+                    display: composition["items.0.1.items.1.value"][i].text
+                  })
+                }
+                fhir_message.entry[2].resource.conclusion = composition["items.0.1.items.3.value"].blocks[0].text;
+                
+                // Observation - Método/Código, Valor, Técnico (ID e Nome), Data Aquisição
+                
+                // Practitioner - User com sessão iniciada
+                
+                // Organization
+                
                 // Metadados - Data da última atualização, ID
                 fhir_message.id = composition_id;
-                const current_date = new Date();
                 fhir_message.meta.lastUpdated = current_date;
-
-                // Paciente - ID, Nome, Género, Data Nascimento, Morada
-                // fhir_message.entry[1].resource.name[0].text = composition.items.0.0.items.0.items.0;
-
-                // Diagnostic Report - Categoria, Código, Conclusão
-
-                // Observation - Método/Código, Valor, Técnico (ID e Nome), Data Aquisição
-
-                // Practitioner - User com sessão iniciada
-
-                // Organization
 
                 res.status(200).json({success: true, composition, fhir_message});
 
