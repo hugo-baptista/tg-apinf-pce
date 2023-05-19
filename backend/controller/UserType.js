@@ -1,6 +1,6 @@
 let UserTypeModel = require('../model/UserType');
 
-module.exports.newUserType = async (code, designation, create_users, create_forms, view_forms, view_fhir) => {
+module.exports.newUserType = async (code, designation, create_users, create_forms, view_forms, create_fhir, view_fhir) => {
     try {
         newUserType = {
             code,
@@ -9,6 +9,7 @@ module.exports.newUserType = async (code, designation, create_users, create_form
                 create_users,
                 create_forms,
                 view_forms,
+                create_fhir,
                 view_fhir
             }
         }

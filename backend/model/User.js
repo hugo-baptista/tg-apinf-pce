@@ -13,6 +13,7 @@ var UserSchema =  new Schema({
         create_users: {type: Boolean, required:true},
         create_forms: {type: Boolean, required:true},
         view_forms: {type: Boolean, required:true},
+        create_fhir: {type: Boolean, required:true},
         view_fhir: {type: Boolean, required:true}
     }
 })
