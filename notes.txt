@@ -1,3 +1,0 @@
-Criar FHIR e guardar na BD (mapeamento)
-Fazer edição do formulário
-Página de visualização das mensagens FHIR
