@@ -6,7 +6,7 @@ var FormModel = require('../model/Form');
 var FhirModel = require('../model/Fhir');
 var FhirController = require('../controller/Fhir');
 
-const { compositionToFHIR } = require('../static/compositionToFHIR')
+const { compositionToFHIR } = require('../static/functions')
 
 router.post('/create', async (req, res) => {
   const {current_user} = req.body;

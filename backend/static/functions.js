@@ -1,5 +1,29 @@
+// Passar a composition de string para JSON
+function parseNestedJSON (jsonString) {
+    let parsedJSON = JSON.parse(jsonString);
+  
+    const recursiveParse = (jsonObject) => {
+      for (let key in jsonObject) {
+        if (typeof jsonObject[key] === 'string') {
+          try {
+            jsonObject[key] = JSON.parse(jsonObject[key]);
+          } catch (error) {
+            // Se não dá para fazer o Parse, então deixa o valor como está
+          }
+        } else if (typeof jsonObject[key] === 'object') {
+          recursiveParse(jsonObject[key]);
+        }
+      }
+    };
+  
+    recursiveParse(parsedJSON);
+    return(parsedJSON);
+  }
+
+
+// Passar a compositiong, no formato JSON, para FHIR
 function compositionToFHIR(composition_id, composition, user) {
-    var fhir_message = require('../static/fhir_analises.json');
+    var fhir_message = require('./fhir_analises.json');
 
     // Alterar informação na mensagem FHIR:
 
@@ -67,4 +91,4 @@ function compositionToFHIR(composition_id, composition, user) {
     return fhir_message;
 };
 
-module.exports = {compositionToFHIR};
+module.exports = {parseNestedJSON, compositionToFHIR};

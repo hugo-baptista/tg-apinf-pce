@@ -5,29 +5,7 @@ var UserModel = require('../model/User')
 var FormModel = require('../model/Form');
 var FormController = require('../controller/Form');
 
-const fs = require('fs');
-
-// Passar a composition de string para JSON
-function parseNestedJSON (jsonString) {
-  let parsedJSON = JSON.parse(jsonString);
-
-  const recursiveParse = (jsonObject) => {
-    for (let key in jsonObject) {
-      if (typeof jsonObject[key] === 'string') {
-        try {
-          jsonObject[key] = JSON.parse(jsonObject[key]);
-        } catch (error) {
-          // Se não dá para fazer o Parse, então deixa o valor como está
-        }
-      } else if (typeof jsonObject[key] === 'object') {
-        recursiveParse(jsonObject[key]);
-      }
-    }
-  };
-
-  recursiveParse(parsedJSON);
-  return(parsedJSON);
-}
+const { parseNestedJSON } = require('../static/functions')
 
 router.post('/submit', async (req, res) => {
   const {current_user} = req.body;
