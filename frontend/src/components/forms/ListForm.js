@@ -13,7 +13,6 @@ import AddIcon from '@mui/icons-material/Add';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import SendIcon from '@mui/icons-material/Send';
 
 var axios = require('axios');
 
@@ -66,9 +65,6 @@ function ListForm() {
                   {form.id}
                 </TableCell>
                 <TableCell align="right">
-                  <IconButton aria-label="edit" size="small" color='primary'>
-                    <SendIcon fontSize="small" />
-                  </IconButton>
                   <IconButton aria-label="edit" size="small" color='success'>
                     <EditIcon fontSize="small" />
                   </IconButton>
