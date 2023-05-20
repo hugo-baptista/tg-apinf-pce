@@ -6,7 +6,7 @@ var FormModel = require('../model/Form');
 var FhirModel = require('../model/Fhir');
 var FhirController = require('../controller/Fhir');
 
-function compositionToFHIR(composition_id, composition) {
+function compositionToFHIR(composition_id, composition, user) {
   var fhir_message = require('../static/fhir_analises.json');
 
   // Alterar informação na mensagem FHIR:
@@ -59,8 +59,12 @@ function compositionToFHIR(composition_id, composition) {
   }
   
   // Practitioner - User com sessão iniciada
+  fhir_message.entry[3+observation_list.length].resource.id = user.id;
+  fhir_message.entry[3+observation_list.length].resource.identifier[0].value = user.id;
+  fhir_message.entry[3+observation_list.length].resource.name[0].text = user.name;
   
   // Organization
+  fhir_message.entry.splice(fhir_message.entry.length-1)
   
     // Metadados
   // Data da última atualização, ID
@@ -84,7 +88,7 @@ router.post('/create', async (req, res) => {
             if (form) {
                 const {composition} = form;
 
-                let fhir_message = compositionToFHIR(composition_id, composition);
+                let fhir_message = compositionToFHIR(composition_id, composition, user);
 
                 res.status(200).json({success: true, fhir_message});
 
