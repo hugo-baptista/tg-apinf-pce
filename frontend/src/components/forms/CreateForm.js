@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { UserContext } from '../../static/UserContext';
 import {Form} from "protected-aidaforms";
-let json = require('../../static/jdt_analises.json');
+let jdt = require('../../static/jdt_analises.json');
 let style = require('../../static/style_analises.json');
 
 var axios = require('axios');
@@ -37,7 +37,7 @@ function CreateForm() {
         onSubmit={(values, changedFields) => saveComposition(values)}
         onSave={(values, changedFields) => console.log("SAVEDVALUES: ", values, "CHANGED FIELDS: ", changedFields)}
         onCancel={status => console.log("CANCELLED:", status)}
-        template={json}
+        template={jdt}
         dlm={{}}
         showPrint={true}
         editMode={true}
