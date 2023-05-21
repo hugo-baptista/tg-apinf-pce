@@ -22,15 +22,29 @@ function parseNestedJSON (jsonString) {
 
 
 // Incrementar a versão do ID dos forms
-function incrementVersionNumber(id) {
-  var regex = /-v(\d+)$/;
-  var match = regex.exec(id);
-  if (match) {
-    var currentVersion = parseInt(match[1]);
-    var newVersion = currentVersion + 1;
-    return id.replace(regex, "-v" + newVersion);
+var FormModel = require('../model/Form');
+var { v4: uuidv4 } = require('uuid');
+async function incrementVersionNumber(version_id) {
+  if (version_id) {
+    var regex = /(.+?)-v(\d+)$/;
+    var match = regex.exec(version_id);
+    if (match) {
+      var base_id = match[1];
+      return new Promise((resolve, reject) => {
+        FormModel.find({ id: { $regex: base_id } })
+          .then(forms => {
+            let newVersion = forms.length + 1;
+            let functionID = version_id.replace(/-v(\d+)$/, "-v" + newVersion);
+            resolve(functionID);
+          })
+          .catch(error => {
+            reject(error);
+          });
+      });
+    }
+  } else {
+    return uuidv4() + "-v1";
   }
-  return id + "-v1";
 }
 
 
