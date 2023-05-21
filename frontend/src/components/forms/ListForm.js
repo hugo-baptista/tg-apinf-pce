@@ -71,9 +71,11 @@ function ListForm() {
                   {form.id}
                 </TableCell>
                 <TableCell align="right">
-                  <IconButton aria-label="edit" size="small" color='success'>
-                    <EditIcon fontSize="small" />
-                  </IconButton>
+                  <Link to={"/forms/edit/"+form.id}>
+                    <IconButton aria-label="edit" size="small" color='success'>
+                      <EditIcon fontSize="small" />
+                    </IconButton>
+                  </Link>
                   <IconButton aria-label="delete" size="small" color='error'>
                     <DeleteIcon fontSize="small" />
                   </IconButton>

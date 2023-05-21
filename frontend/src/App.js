@@ -7,6 +7,7 @@ import NotFound from "./NotFound";
 import Login from "./components/users/Login";
 import ListForm from "./components/forms/ListForm";
 import CreateForm from "./components/forms/CreateForm";
+import EditForm from "./components/forms/EditForm";
 import ListUser from "./components/users/ListUser";
 import CreateUser from "./components/users/CreateUser";
 
@@ -48,6 +49,9 @@ function App() {
             </Route>
             <Route exact path="/forms/create">
               <CreateForm/>
+            </Route>
+            <Route exact path="/forms/edit/:formID">
+              <EditForm/>
             </Route>
             <Route exact path="/users">
               <ListUser/>
