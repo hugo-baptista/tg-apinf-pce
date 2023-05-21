@@ -2,11 +2,11 @@
     Para criar falta Metadados e 2 campos no formulário, assim como guardar na BD
 
 - Fazer edição do formulário
-    - Ao editar um form, se não mexermos nos campos dos Resultados, estes não são corretamente guardados. Isto deve-se ao facto de fazermos
-        resultado_corrigido["values"]["items.0.1.items.2.items.1.value"] = resultado["values"]["items.0.1.items.2.items.1.value"]["blocks"][0]["text"],
-        resultado_corrigido["values"]["items.0.1.items.2.items.2.items.0.value"] = resultado["values"]["items.0.1.items.2.items.2.items.0.value"]["blocks"][0]["text"],
-        e resultado_corrigido["values"]["items.0.1.items.2.items.2.items.1.value"] = resultado["values"]["items.0.1.items.2.items.2.items.1.value"]["blocks"][0]["text"];
-        Dessa forma, quando se não se altera os resultados, estes são guardados diretamente no "resultado_corrigido["values"]["items.0.1.items.2.items.2.items.1.value"]",
-        sem o "["blocks"][0]["text"]", o que dá erro quando se tenta editar a nova versão.
+    Ao editar um form, se não mexermos nos campos dos Resultados, estes não são corretamente guardados. Isto deve-se ao facto de fazermos
+    resultado_corrigido["values"]["items.0.1.items.2.items.1.value"] = resultado["values"]["items.0.1.items.2.items.1.value"]["blocks"][0]["text"],
+    resultado_corrigido["values"]["items.0.1.items.2.items.2.items.0.value"] = resultado["values"]["items.0.1.items.2.items.2.items.0.value"]["blocks"][0]["text"],
+    e resultado_corrigido["values"]["items.0.1.items.2.items.2.items.1.value"] = resultado["values"]["items.0.1.items.2.items.2.items.1.value"]["blocks"][0]["text"];
+    Dessa forma, quando se não se altera os resultados, estes são guardados diretamente no "resultado_corrigido["values"]["items.0.1.items.2.items.2.items.1.value"]",
+    sem o "["blocks"][0]["text"]", o que dá erro quando se tenta editar a nova versão.
 
 - Página de visualização das mensagens FHIR
