@@ -34,7 +34,7 @@ function Navbar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* Ícone */}
+          {/* Ícone (logo) */}
           <AssessmentIcon
             sx={{
               color: 'white',
@@ -43,7 +43,7 @@ function Navbar() {
             }}
             />
 
-          {/* Nome */}
+          {/* Nome (logo) */}
           <Link to="/">
             <Typography
               variant="h6"
@@ -63,14 +63,14 @@ function Navbar() {
             </Typography>
           </Link>
 
-          {/* Lado Esquerdo */}
+          {/* Botões do Lado Esquerdo */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {user && user.permissions.create_users && (
-              <Link to="/users/create">
+              <Link to="/users">
                 <Button
                     sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                    Criar novo utilizador
+                    Utilizadores
                 </Button>
               </Link>
             )}
@@ -94,7 +94,7 @@ function Navbar() {
             )}
           </Box>
 
-          {/* Lado direito */}
+          {/* Botões do Lado Direito */}
           <Box sx={{ flexGrow: 0 }}>
             { user
               ?

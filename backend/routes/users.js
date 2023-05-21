@@ -5,33 +5,6 @@ var UserModel = require('../model/User');
 var UserController = require('../controller/User');
 var UserTypeModel = require('../model/UserType');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
-router.put('/validate', (req, res) => {
-  const {username, password} = req.body;
-  UserModel.findOne({username, password})
-  .then(user => {
-    if (user) {
-      res.json({user});
-    } else {
-      UserModel.findOne({username: req.body.username})
-      .then(user => {
-        if (user) {
-          res.json({password_error: true});
-        } else {
-          res.json({username_error: true});
-        }
-      })
-    }
-  })
-  .catch(err => {
-    res.json(err);
-  })
-});
-
 router.get('/types', function(req, res, next) {
   var user_types_list = [];
   UserTypeModel.find({})
@@ -47,6 +20,29 @@ router.get('/types', function(req, res, next) {
   .catch(err => {
     console.log(err);
   });
+});
+
+router.post('/list', async (req, res) => {
+  const {current_user} = req.body;
+  const {username, password} = current_user;
+
+  UserModel.findOne({username, password})
+  .then(async user => {
+    if (user.permissions.create_users) {
+      UserModel.find()
+      .then(async users => {
+        res.status(200).json({success: true, users: users});
+      })
+      .catch(err => {
+        res.status(200).json({success: false, info: err});
+      })
+    } else {
+      res.status(200).json({success: false, info: "Não tem permissões!"});
+    }
+  })
+  .catch(err => {
+    res.json(err);
+  })
 });
 
 router.post('/create', async function(req, res, next) {
@@ -82,6 +78,28 @@ router.post('/create', async function(req, res, next) {
       })
     } else {
       res.status(200).json({success: false, info: "Não tem permissões!"});
+    }
+  })
+  .catch(err => {
+    res.json(err);
+  })
+});
+
+router.put('/validate', (req, res) => {
+  const {username, password} = req.body;
+  UserModel.findOne({username, password})
+  .then(user => {
+    if (user) {
+      res.json({user});
+    } else {
+      UserModel.findOne({username: req.body.username})
+      .then(user => {
+        if (user) {
+          res.json({password_error: true});
+        } else {
+          res.json({username_error: true});
+        }
+      })
     }
   })
   .catch(err => {
