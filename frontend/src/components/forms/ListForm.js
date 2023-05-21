@@ -19,6 +19,8 @@ var axios = require('axios');
 function ListForm() {
   const {user} = useContext(UserContext);
 
+  const [success, setSuccess] = useState(false);
+
   const [formList, setFormList] = useState([]);
   useEffect(() => {    
     let message_body = {
@@ -30,8 +32,12 @@ function ListForm() {
 
     axios.post('http://localhost:8080/forms/list', message_body)
     .then((response) => {
-      setFormList(response.data.forms);
       console.log(response.data);
+      if (response.data.success) {
+        setFormList(response.data.forms);
+      } else {
+        setSuccess(response.data.info)
+      }
     });
   }, [user.username, user.password]);
 
@@ -77,6 +83,10 @@ function ListForm() {
           </TableBody>
         </Table>
       </TableContainer>
+
+      {success && (
+        <p>Erro: {success}</p>
+      )}
     </div>
   );
 }

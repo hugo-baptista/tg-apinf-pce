@@ -19,6 +19,8 @@ var axios = require('axios');
 function ListUser() {
   const {user} = useContext(UserContext);
 
+  const [success, setSuccess] = useState(false);
+
   const [userList, setUserList] = useState([]);
   useEffect(() => {    
     let message_body = {
@@ -30,8 +32,12 @@ function ListUser() {
 
     axios.post('http://localhost:8080/users/list', message_body)
     .then((response) => {
-      setUserList(response.data.users);
       console.log(response.data);
+      if (response.data.success) {
+        setUserList(response.data.users);
+      } else {
+        setSuccess(response.data.info)
+      }
     });
   }, [user.username, user.password]);
 
@@ -85,6 +91,10 @@ function ListUser() {
           </TableBody>
         </Table>
       </TableContainer>
+
+      {success && (
+        <p>Erro: {success}</p>
+      )}
     </div>
   );
 }

@@ -11,16 +11,27 @@ router.post('/list', async (req, res) => {
 
   UserModel.findOne({username, password})
   .then(async user => {
-    if (user.permissions.view_forms) {
-      FormModel.find()
-      .then(async forms => {
-        res.status(200).json({success: true, forms: forms});
-      })
-      .catch(err => {
-        res.status(200).json({success: false, info: err});
-      })
+    if (user) {
+      if (user.permissions.view_forms) {
+        FormModel.find()
+        .then(async forms => {
+          res.status(200).json({success: true, forms: forms});
+        })
+        .catch(err => {
+          res.status(200).json({success: false, info: err});
+        })
+      } else {
+        res.status(200).json({success: false, info: "Não tem permissões!"});
+      }
     } else {
-      res.status(200).json({success: false, info: "Não tem permissões!"});
+      UserModel.findOne({username})
+      .then(user => {
+        if (user) {
+          res.json({success: false, info: "Password errada!"});
+        } else {
+          res.json({success: false, info: "Utilizador não existe!"});
+        }
+      })
     }
   })
   .catch(err => {
