@@ -5,7 +5,7 @@ var FormModel = require('../model/Form');
 var FormController = require('../controller/Form');
 const { parseNestedJSON } = require('../static/functions')
 
-router.get('/list', async (req, res) => {
+router.post('/list', async (req, res) => {
   const {current_user} = req.body;
   const {username, password} = current_user;
 
