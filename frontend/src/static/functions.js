@@ -4,15 +4,16 @@ function editedJDT(composition) {
     let jdt = JSON.parse(JSON.stringify(original_jdt));
 
     // Paciente
-    // Nome paciente
+    // ID do paciente
     jdt.items[0][0].items[0].items[0].value=composition["items.0.0.items.0.items.0.value"];
+    // Nome paciente
+    jdt.items[0][0].items[0].items[1].value=composition["items.0.0.items.0.items.1.value"];
     // Género
-    jdt.items[0][0].items[0].items[3].value = composition["items.0.0.items.0.items.3.value"];
+    jdt.items[0][0].items[0].items[4].value = composition["items.0.0.items.0.items.4.value"];
     // Data de nascimento
-    jdt.items[0][0].items[0].items[2].items[0].value.date = composition["items.0.0.items.0.items.2.items.0.value.date"];
-    jdt.items[0][0].items[0].items[2].items[0].value.time = composition["items.0.0.items.0.items.2.items.0.value.time"];
+    jdt.items[0][0].items[0].items[3].items[0].value = composition["items.0.0.items.0.items.3.items.0.value"];
     // Morada
-    jdt.items[0][0].items[0].items[1].items[0].value = composition["items.0.0.items.0.items.1.items.0.value"];
+    jdt.items[0][0].items[0].items[2].items[0].value = composition["items.0.0.items.0.items.2.items.0.value"];
     
     // Procedimento
     // Categoria
@@ -25,11 +26,11 @@ function editedJDT(composition) {
     // Resultados
     jdt.items[0][1].items[2].value = [];
     composition["items.0.1.items.2.value"].forEach(resultado => {
-        let resultado_corrigido = JSON.parse(JSON.stringify(resultado))
-        resultado_corrigido["values"]["items.0.1.items.2.items.1.value"] = resultado["values"]["items.0.1.items.2.items.1.value"];
-        resultado_corrigido["values"]["items.0.1.items.2.items.2.items.0.value"] = resultado["values"]["items.0.1.items.2.items.2.items.0.value"];
-        resultado_corrigido["values"]["items.0.1.items.2.items.2.items.1.value"] = resultado["values"]["items.0.1.items.2.items.2.items.1.value"];
-        jdt.items[0][1].items[2].value.push(resultado_corrigido);
+        // let resultado_corrigido = JSON.parse(JSON.stringify(resultado))
+        // resultado_corrigido["values"]["items.0.1.items.2.items.1.value"] = resultado["values"]["items.0.1.items.2.items.1.value"];
+        // resultado_corrigido["values"]["items.0.1.items.2.items.2.items.0.value"] = resultado["values"]["items.0.1.items.2.items.2.items.0.value"];
+        // resultado_corrigido["values"]["items.0.1.items.2.items.2.items.1.value"] = resultado["values"]["items.0.1.items.2.items.2.items.1.value"];
+        jdt.items[0][1].items[2].value.push(resultado);
     });
 
     // Recetor

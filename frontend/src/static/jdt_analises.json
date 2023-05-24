@@ -71,6 +71,36 @@
                   ],
                   "dataType": "DV_TEXT",
                   "itemName": "Nome",
+                  "itemPath": "items.0.0.items.0.items.4",
+                  "node": {
+                    "code": "at0001",
+                    "description": "The unstructured name for the individual.",
+                    "text": "ID do Paciente"
+                  },
+                  "occurrences": {
+                    "lowerOccurrences": 0,
+                    "upperOccurrences": 1
+                  },
+                  "path": "[openEHR-EHR-COMPOSITION.report-result.v1]/[openEHR-EHR-ADMIN_ENTRY.demographics.v0]/[openEHR-EHR-CLUSTER.person.v1]/[at0001]",
+                  "ruleMandatory": [],
+                  "ruleVisibility": [],
+                  "value": null
+                },
+                {
+                  "Functions": [],
+                  "InternalFunctions": [],
+                  "Refset": [],
+                  "TaskEditable": [
+                    "All"
+                  ],
+                  "TaskInReport": [
+                    "All"
+                  ],
+                  "TaskVisible": [
+                    "All"
+                  ],
+                  "dataType": "DV_TEXT",
+                  "itemName": "Nome",
                   "itemPath": "items.0.0.items.0.items.0",
                   "node": {
                     "code": "at0001",
@@ -179,7 +209,7 @@
                       "TaskVisible": [
                         "All"
                       ],
-                      "dataType": "DV_DATE_TIME",
+                      "dataType": "DV_DATE",
                       "itemName": "Data de nascimento",
                       "itemPath": "items.0.0.items.0.items.2.items.0",
                       "node": {
@@ -193,10 +223,7 @@
                       "path": "[openEHR-EHR-COMPOSITION.report-result.v1]/[openEHR-EHR-ADMIN_ENTRY.demographics.v0]/[openEHR-EHR-CLUSTER.person.v1]/[openEHR-EHR-CLUSTER.dob_alternative.v0]/[at0001]",
                       "ruleMandatory": [],
                       "ruleVisibility": [],
-                      "value": {
-                        "date": null,
-                        "time": null
-                      }
+                      "value": null
                     }
                   ],
                   "node": {
@@ -5068,6 +5095,36 @@
                     "code": "at0001",
                     "description": "The value of the analyte result.",
                     "text": "Valor"
+                  },
+                  "occurrences": {
+                    "lowerOccurrences": 0,
+                    "upperOccurrences": 1
+                  },
+                  "path": "[openEHR-EHR-COMPOSITION.report-result.v1]/[openEHR-EHR-ACTION.procedure.v1]/[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/[at0001]",
+                  "ruleMandatory": [],
+                  "ruleVisibility": [],
+                  "value": null
+                },
+                {
+                  "Functions": [],
+                  "InternalFunctions": [],
+                  "Refset": [],
+                  "TaskEditable": [
+                    "All"
+                  ],
+                  "TaskInReport": [
+                    "All"
+                  ],
+                  "TaskVisible": [
+                    "All"
+                  ],
+                  "dataType": "DV_TEXT",
+                  "itemName": "Unidade",
+                  "itemPath": "items.0.1.items.2.items.4",
+                  "node": {
+                    "code": "at0001",
+                    "description": "The unity of the analyte result.",
+                    "text": "Unidade"
                   },
                   "occurrences": {
                     "lowerOccurrences": 0,
