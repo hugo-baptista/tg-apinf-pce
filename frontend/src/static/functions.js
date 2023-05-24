@@ -24,14 +24,7 @@ function editedJDT(composition) {
     jdt.items[0][1].items[3].value = composition["items.0.1.items.3.value"];
 
     // Resultados
-    jdt.items[0][1].items[2].value = [];
-    composition["items.0.1.items.2.value"].forEach(resultado => {
-        // let resultado_corrigido = JSON.parse(JSON.stringify(resultado))
-        // resultado_corrigido["values"]["items.0.1.items.2.items.1.value"] = resultado["values"]["items.0.1.items.2.items.1.value"];
-        // resultado_corrigido["values"]["items.0.1.items.2.items.2.items.0.value"] = resultado["values"]["items.0.1.items.2.items.2.items.0.value"];
-        // resultado_corrigido["values"]["items.0.1.items.2.items.2.items.1.value"] = resultado["values"]["items.0.1.items.2.items.2.items.1.value"];
-        jdt.items[0][1].items[2].value.push(resultado);
-    });
+    jdt.items[0][1].items[2].value = composition["items.0.1.items.2.value"];
 
     // Recetor
     // Nome
