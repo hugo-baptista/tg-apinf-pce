@@ -53,11 +53,14 @@ function ListForm() {
         </Link>
       )}
 
+      <h1>Lista das Compositions: </h1>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Form (ID)</TableCell>
+              <TableCell>Data de criação</TableCell>
+              <TableCell>ID</TableCell>
+              <TableCell>Paciente</TableCell>
               <TableCell align="right">Opções</TableCell>
             </TableRow>
           </TableHead>
@@ -67,6 +70,12 @@ function ListForm() {
                 key={form.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
+                <TableCell component="th" scope="row">
+                  {form.createdAt}
+                </TableCell>
+                <TableCell component="th" scope="row">
+                  {form.id}
+                </TableCell>
                 <TableCell component="th" scope="row">
                   {form.id}
                 </TableCell>

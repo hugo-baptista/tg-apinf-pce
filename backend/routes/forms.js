@@ -3,7 +3,7 @@ var router = express.Router();
 var UserModel = require('../model/User')
 var FormModel = require('../model/Form');
 var FormController = require('../controller/Form');
-const { parseNestedJSON, incrementVersionNumber } = require('../static/functions')
+const { parseNestedJSON, incrementVersionNumber, removeBlocks } = require('../static/functions')
 
 router.post('/submit', async (req, res) => {
   const {current_user} = req.body;
@@ -16,9 +16,10 @@ router.post('/submit', async (req, res) => {
       let new_composition_id = await incrementVersionNumber(composition_id);
 
       const {composition} = req.body;
-      const composition_json = parseNestedJSON(composition)
+      const composition_json = parseNestedJSON(composition);
+      const sandardized_composition = removeBlocks(composition_json);
 
-      let newFormResponse = await FormController.newForm(new_composition_id, composition_json);
+      let newFormResponse = await FormController.newForm(new_composition_id, sandardized_composition);
       if (newFormResponse.success) {
         res.status(200).json({success: true, info: "FormComposition adicionado com sucesso!"});
       } else {
