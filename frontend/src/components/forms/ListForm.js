@@ -11,8 +11,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import AddIcon from '@mui/icons-material/Add';
 import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 var axios = require('axios');
 
@@ -77,9 +78,14 @@ function ListForm() {
                   {form.id}
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  {form.id}
+                  {form.composition["items.0.0.items.0.items.0.value"]}
                 </TableCell>
                 <TableCell align="right">
+                  <Link to={"/forms/"+form.id}>
+                    <IconButton aria-label="edit" size="small" color='primary'>
+                      <VisibilityIcon fontSize="small" />
+                    </IconButton>
+                  </Link>
                   <Link to={"/forms/edit/"+form.id}>
                     <IconButton aria-label="edit" size="small" color='success'>
                       <EditIcon fontSize="small" />
