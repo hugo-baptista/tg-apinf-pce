@@ -49,12 +49,12 @@ function ListForm() {
           <Button startIcon={<AddIcon/>} color='success' variant='contained'
             sx={{ my: 2 }}
           >
-              Adicionar novo Form
+              Novo Registo
           </Button>
         </Link>
       )}
 
-      <h1>Lista das Compositions: </h1>
+      <h1>Lista dos Registos: </h1>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
