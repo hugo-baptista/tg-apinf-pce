@@ -1,9 +1,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var { v4: uuidv4 } = require('uuid');
 
 var FormSchema = new Schema({
-  id: {type: String, default: uuidv4, unique: true},
+  id: {type: String, unique: true, required: true},
   composition: {type: Schema.Types.Mixed, required: true}
 }, { timestamps: true });
 

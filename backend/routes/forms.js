@@ -3,7 +3,8 @@ var router = express.Router();
 var UserModel = require('../model/User')
 var FormModel = require('../model/Form');
 var FormController = require('../controller/Form');
-const { parseNestedJSON, incrementVersionNumber, removeBlocks } = require('../static/functions')
+var FhirController = require('../controller/Fhir');
+const { parseNestedJSON, incrementVersionNumber, removeBlocks, compositionToFHIR } = require('../static/functions')
 
 router.post('/submit', async (req, res) => {
   const {current_user} = req.body;
@@ -19,12 +20,35 @@ router.post('/submit', async (req, res) => {
       const composition_json = parseNestedJSON(composition);
       const sandardized_composition = removeBlocks(composition_json);
 
+      // Criar o Form
       let newFormResponse = await FormController.newForm(new_composition_id, sandardized_composition);
       if (newFormResponse.success) {
-        res.status(200).json({success: true, info: "FormComposition adicionado com sucesso!"});
+        // Criar o FHIR
+        FormModel.findOne({id: new_composition_id})
+          .then(async form => {
+              if (form) {
+                  const {composition} = form;
+  
+                  let fhir_message = compositionToFHIR(new_composition_id, composition, user, form.updatedAt);
+  
+                  let newFhirResponse = await FhirController.newFhir(new_composition_id, fhir_message);
+  
+                  // Resposta
+                  if (newFhirResponse.success) {
+                      res.status(200).json({success: true, info: "FormComposition e FhirMessage adicionados com sucesso!"});
+                  } else {
+                      res.status(200).json({success: false, info: "Erro ao adicionar FhirMessage!"});
+                      console.log(newFhirResponse.response);
+                  };
+              } else {
+                  res.status(200).json({success: false, info: "FormID não existe!"});
+              }
+          })
       } else {
         res.status(200).json({success: false, info: "Erro ao adicionar FormComposition!"});
+        console.log(newFormResponse.response);
       };
+
     } else {
       res.status(200).json({success: false, info: "Não tem permissões!"});
     }
