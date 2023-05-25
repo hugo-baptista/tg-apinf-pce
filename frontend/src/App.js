@@ -9,6 +9,8 @@ import ListForm from "./components/forms/ListForm";
 import ViewForm from "./components/forms/ViewForm";
 import CreateForm from "./components/forms/CreateForm";
 import EditForm from "./components/forms/EditForm";
+import ListFhir from "./components/fhir/ListFhir";
+import ViewFhir from "./components/fhir/ViewFhir";
 import ListUser from "./components/users/ListUser";
 import CreateUser from "./components/users/CreateUser";
 
@@ -56,6 +58,12 @@ function App() {
             </Route>
             <Route exact path="/forms/edit/:composition_id">
               <EditForm/>
+            </Route>
+            <Route exact path="/fhir">
+              <ListFhir/>
+            </Route>
+            <Route exact path="/fhir/:composition_id">
+              <ViewFhir/>
             </Route>
             <Route exact path="/users">
               <ListUser/>

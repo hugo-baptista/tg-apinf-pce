@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../static/UserContext';
 import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -9,20 +8,18 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import AddIcon from '@mui/icons-material/Add';
 import IconButton from '@mui/material/IconButton';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 var axios = require('axios');
 
-function ListForm() {
+function ListFhir() {
   const {user} = useContext(UserContext);
 
   const [success, setSuccess] = useState(false);
 
-  const [formList, setFormList] = useState([]);
+  const [fhirList, setFhirList] = useState([]);
   useEffect(() => {    
     let message_body = {
       current_user: {
@@ -31,11 +28,11 @@ function ListForm() {
       }
     }
 
-    axios.post('http://localhost:8080/forms/list', message_body)
+    axios.post('http://localhost:8080/fhir/list', message_body)
     .then((response) => {
       console.log(response.data);
       if (response.data.success) {
-        setFormList(response.data.forms);
+        setFhirList(response.data.fhirs);
       } else {
         setSuccess(response.data.info)
       }
@@ -44,20 +41,7 @@ function ListForm() {
 
   return (
     <div>
-      <h1 className='title'>Lista dos Registos: </h1>
-
-      <div className="center">
-        {user && user.permissions.create_forms_fhir && (
-          <Link to="/forms/create">
-            <Button startIcon={<AddIcon/>} color='success' variant='contained'
-              sx={{ my: 2 }}
-            >
-                Novo Registo
-            </Button>
-          </Link>
-        )}
-      </div>
-
+      <h1 className='title'>Lista das mensagens FHIR: </h1>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
@@ -69,29 +53,24 @@ function ListForm() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {formList.map((form) => (
+            {fhirList.map((fhir) => (
               <TableRow
-                key={form.id}
+                key={fhir.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {form.createdAt}
+                  {fhir.createdAt}
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  {form.id}
+                  {fhir.id}
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  ({form.composition["items.0.0.items.0.items.0.value"]}) {form.composition["items.0.0.items.0.items.1.value"]}
+                  ({fhir.message.entry[1].resource.id}) {fhir.message.entry[1].resource.name[0].text}
                 </TableCell>
                 <TableCell align="right">
-                  <Link to={"/forms/"+form.id}>
+                  <Link to={"/fhir/"+fhir.id}>
                     <IconButton aria-label="edit" size="small" color='primary'>
                       <VisibilityIcon fontSize="small" />
-                    </IconButton>
-                  </Link>
-                  <Link to={"/forms/edit/"+form.id}>
-                    <IconButton aria-label="edit" size="small" color='success'>
-                      <EditIcon fontSize="small" />
                     </IconButton>
                   </Link>
                   <IconButton aria-label="delete" size="small" color='error'>
@@ -111,4 +90,4 @@ function ListForm() {
   );
 }
 
-export default ListForm;
+export default ListFhir;
