@@ -29,7 +29,11 @@ function removeBlocks(composition) {
   "items.0.1.items.5.items.0.value", "items.0.1.items.5.items.1.value"];
   composition_elements.forEach(element => {
     try {
-      composition[element] = composition[element].blocks[0].text;
+      let content = '';
+      composition[element].blocks.forEach(block => {
+        content = content + "\n" + block.text;
+      });
+      composition[element] = content.substring(1);
     } catch {};
   });
   resultados = JSON.parse(JSON.stringify(composition["items.0.1.items.2.value"]))
@@ -40,7 +44,11 @@ function removeBlocks(composition) {
     let resultado_corrigido = JSON.parse(JSON.stringify(resultado))
     result_elements.forEach(element => {
       try {
-        resultado_corrigido["values"][element] = resultado.values[element].blocks[0].text;
+        let content = '';
+        resultado.values[element].blocks.forEach(block => {
+          content = content + "\n" + block.text;
+        });
+        resultado_corrigido["values"][element] = content.substring(1);
       } catch {};
     });
     composition["items.0.1.items.2.value"].push(resultado_corrigido)
