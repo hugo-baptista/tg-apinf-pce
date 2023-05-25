@@ -49,7 +49,7 @@ router.post('/list', async (req, res) => {
   const {username, password} = current_user;
   UserModel.findOne({username, password})
   .then(async user => {
-    if (user.permissions.view_fhirs) {
+    if (user.permissions.view_fhir) {
       FhirModel.find()
       .then(async fhirs => {
         res.status(200).json({success: true, fhirs: fhirs});
@@ -59,6 +59,40 @@ router.post('/list', async (req, res) => {
       })
     } else {
       res.status(200).json({success: false, info: "Não tem permissões!"});
+    }
+  })
+  .catch(err => {
+    res.json(err);
+  })
+});
+
+router.post('/:id', async (req, res) => {
+  const {current_user} = req.body;
+  const {username, password} = current_user;
+
+  UserModel.findOne({username, password})
+  .then(async user => {
+    if (user) {
+      if (user.permissions.view_fhir) {
+        FhirModel.find({id: req.params.id})
+        .then(async fhir => {
+          res.status(200).json({success: true, fhir: fhir});
+        })
+        .catch(err => {
+          res.status(200).json({success: false, info: err});
+        })
+      } else {
+        res.status(200).json({success: false, info: "Não tem permissões!"});
+      }
+    } else {
+      UserModel.findOne({username})
+      .then(user => {
+        if (user) {
+          res.json({success: false, info: "Password errada!"});
+        } else {
+          res.json({success: false, info: "Utilizador não existe!"});
+        }
+      })
     }
   })
   .catch(err => {
