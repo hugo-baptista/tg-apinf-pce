@@ -21,7 +21,7 @@ router.post('/create', async (req, res) => {
             if (form) {
                 const {composition} = form;
 
-                let fhir_message = compositionToFHIR(composition_id, composition, user);
+                let fhir_message = compositionToFHIR(composition_id, composition, user, form.updatedAt);
 
                 res.status(200).json({success: true, fhir_message});
 
