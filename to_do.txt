@@ -1,4 +1,3 @@
-- Criar FHIR e guardar na BD (mapeamento)
-    Para criar falta Metadados e 2 campos no formulário, assim como guardar na BD
+- Criar FHIR em conjunto com composition
 
 - Página de visualização das mensagens FHIR
