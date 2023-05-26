@@ -41,7 +41,7 @@ function ListFhir() {
 
   return (
     <div>
-      <h1 className='title'>Lista das mensagens FHIR: </h1>
+      <h1 className='title'>Lista das Mensagens FHIR: </h1>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>

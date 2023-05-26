@@ -113,7 +113,11 @@ function compositionToFHIR(composition_id, composition, user, updatedAt) {
   // Nome
   fhir.entry[1].resource.name[0].text = composition["items.0.0.items.0.items.1.value"];
   // Género
-  fhir.entry[1].resource.gender = composition["items.0.0.items.0.items.4.value"].text;
+  try {
+    fhir.entry[1].resource.gender = composition["items.0.0.items.0.items.4.value"].text;
+  } catch (error) {
+    fhir.entry[1].resource.gender = null;
+  }
   // Data de Nascimento
   fhir.entry[1].resource.birthDate = composition["items.0.0.items.0.items.3.items.0.value"];
   // Morada
@@ -125,16 +129,28 @@ function compositionToFHIR(composition_id, composition, user, updatedAt) {
 
   // Diagnostic
   // Categoria
-  fhir.entry[2].resource.category.coding[1].code = composition["items.0.1.items.0.value"].code.replace(/local_terms::/g, "");
-  fhir.entry[2].resource.category.coding[1].display = composition["items.0.1.items.0.value"].text;
+  try {
+    fhir.entry[2].resource.category.coding[1].code = composition["items.0.1.items.0.value"].code.replace(/local_terms::/g, "");
+  } catch (error) {
+    fhir.entry[2].resource.category.coding[1].code = null;
+  }
+  try {
+    fhir.entry[2].resource.category.coding[1].display = composition["items.0.1.items.0.value"].text;
+  } catch (error) {
+    fhir.entry[2].resource.category.coding[1].display = null;
+  }
   // Código
   fhir.entry[2].resource.code.coding = [];
   let code_list = composition["items.0.1.items.1.value"];
-  for (let i=0; i<code_list.length; i++) {
-    fhir.entry[2].resource.code.coding.push({
-    code: code_list[i].code.replace(/local_terms::/g, ""),
-    display: code_list[i].text
-  })
+  try {
+    for (let i=0; i<code_list.length; i++) {
+      fhir.entry[2].resource.code.coding.push({
+        code: code_list[i].code.replace(/local_terms::/g, ""),
+        display: code_list[i].text
+      })
+    }
+  } catch (error) {
+    
   };
   // Conclusão
   fhir.entry[2].resource.conclusion = composition["items.0.1.items.3.value"];
@@ -155,8 +171,16 @@ function compositionToFHIR(composition_id, composition, user, updatedAt) {
   for (let i=0; i<observation_list.length; i++) {
     let observation = JSON.parse(JSON.stringify(base_observation));
     // Método/Código
-    observation.resource.code.coding[0].code = observation_list[i].values["items.0.1.items.2.items.0.value"].code.replace(/local_terms::/g, "");
-    observation.resource.code.coding[0].display = observation_list[i].values["items.0.1.items.2.items.0.value"].text;
+    try {
+      observation.resource.code.coding[0].code = observation_list[i].values["items.0.1.items.2.items.0.value"].code.replace(/local_terms::/g, "");
+    } catch (error) {
+      observation.resource.code.coding[0].code = null;
+    }
+    try {
+      observation.resource.code.coding[0].display = observation_list[i].values["items.0.1.items.2.items.0.value"].text;
+    } catch (error) {
+      observation.resource.code.coding[0].display = null;
+    }
     // Valor
     observation.resource.valueQuantity.value = observation_list[i].values["items.0.1.items.2.items.1.value"];
     observation.resource.valueQuantity.unit = observation_list[i].values["items.0.1.items.2.items.2.value"];
