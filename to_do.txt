@@ -1,1 +1,5 @@
-- Página de listagem e visualização das mensagens FHIR
+- Página de visualização das mensagens FHIR
+- Modelagem no MySQL
+- Ligação ao MySQL
+- Exportar MongoDB para CSV
+- MySQL queries
