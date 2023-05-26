@@ -1,4 +1,5 @@
 - Página de visualização das mensagens FHIR
+- Botão de eliminar (desativar) os forms e fhirs
 - Modelagem no MySQL
 - Ligação ao MySQL
 - Exportar MongoDB para CSV
