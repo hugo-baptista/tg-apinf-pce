@@ -1,9 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../static/UserContext';
 import { useParams } from 'react-router-dom';
-import {Form} from "protected-aidaforms";
-let { editedFhirJDT } = require('../../static/functions')
-let style = require('../../static/style_analises.json');
 var axios = require('axios');
 
 function ViewFhir() {
@@ -37,20 +34,9 @@ function ViewFhir() {
         <p>Loading...</p>
       )}
       {!(loading) && (
-        <Form
-          template={editedFhirJDT(composition)}
-          fhirDesign={JSON.stringify(style)}
-
-          canSubmit={false}
-
-          canSave={false}
-          
-          canCancel={false}
-          onCancel={status => console.log("CANCELLED:", status)}
-          
-          editMode={false}
-          professionalTasks={["Registar Pedido", "Consultar Pedido","Anular Pedido"]}
-        />
+        <pre>
+          {JSON.stringify(composition, null, 2)}
+        </pre>
       )}
     </div>
     );
