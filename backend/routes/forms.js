@@ -66,7 +66,7 @@ router.post('/list', async (req, res) => {
   .then(async user => {
     if (user) {
       if (user.permissions.view_forms) {
-        FormModel.find()
+        FormModel.find({active: "true"})
         .then(async forms => {
           res.status(200).json({success: true, forms: forms});
         })
@@ -92,21 +92,24 @@ router.post('/list', async (req, res) => {
   })
 });
 
-router.post('/:id', async (req, res) => {
+router.post('/delete/:id', async (req, res) => {
   const {current_user} = req.body;
   const {username, password} = current_user;
 
   UserModel.findOne({username, password})
   .then(async user => {
     if (user) {
-      if (user.permissions.view_forms) {
-        FormModel.find({id: req.params.id})
-        .then(async form => {
-          res.status(200).json({success: true, form: form});
-        })
-        .catch(err => {
-          res.status(200).json({success: false, info: err});
-        })
+      if (user.permissions.create_forms_fhir) {
+        let deleteFormResponse = await FormController.deleteForm(req.params.id);
+        let deleteFhirResponse = await FhirController.deleteFhir(req.params.id);
+
+        if (deleteFormResponse.success && deleteFhirResponse.success) {
+          res.status(200).json({success: true, info: "FormComposition e FhirMessage apagados com sucesso!"});
+        } else if (deleteFormResponse.success) {
+          res.status(200).json({success: true, info: "Apenas FhirMessage apagado!"});
+        } else {
+          res.status(200).json({success: true, info: "Apenas FormComposition apagado!"});
+        }
       } else {
         res.status(200).json({success: false, info: "Não tem permissões!"});
       }

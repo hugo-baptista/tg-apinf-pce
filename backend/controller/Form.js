@@ -15,3 +15,16 @@ module.exports.newForm = async (id, composition) => {
     }
 }
 
+module.exports.deleteForm = async (id) => {
+    try {
+        var response = await FormSchema.updateOne({id},{
+            $set:{
+                active: false
+            }
+        })
+        return {success: true, response};
+    } catch(err) {
+        console.log(err);
+        return {success: false, response: err}
+    }
+}

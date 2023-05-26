@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 
 var FhirSchema = new Schema({
   id: {type: String, unique: true, required: true},
-  message: {type: Schema.Types.Mixed, required: true}
+  message: {type: Schema.Types.Mixed, required: true},
+  active: {type: Boolean, default: "true"}
 }, { timestamps: true });
 
 module.exports = mongoose.model('Fhir', FhirSchema)

@@ -39,6 +39,20 @@ function ListFhir() {
     });
   }, [user.username, user.password]);
 
+  const handleDelete = (id) => {
+    let message_body = {
+      current_user: {
+        username: user.username,
+        password: user.password
+      }
+    }
+
+    axios.post('http://localhost:8080/forms/delete/' + id, message_body)
+    .then((res) => {
+      alert(res.data.info);
+    })
+  }
+
   return (
     <div>
       <h1 className='title'>Lista das Mensagens: </h1>
@@ -73,9 +87,11 @@ function ListFhir() {
                       <VisibilityIcon fontSize="small" />
                     </IconButton>
                   </Link>
-                  <IconButton aria-label="delete" size="small" color='error'>
-                    <DeleteIcon fontSize="small" />
-                  </IconButton>
+                  {user && user.permissions.create_forms_fhir && (
+                    <IconButton aria-label="delete" size="small" color='error' onClick={() => handleDelete(fhir.id)}>
+                      <DeleteIcon fontSize="small" />
+                    </IconButton>
+                  )}
                 </TableCell>
               </TableRow>
             ))}

@@ -14,3 +14,17 @@ module.exports.newFhir = async (id, message) => {
         return {success: false, response: err}
     }
 }
+
+module.exports.deleteFhir = async (id) => {
+    try {
+        var response = await FhirSchema.updateOne({id},{
+            $set:{
+                active: false
+            }
+        })
+        return {success: true, response};
+    } catch(err) {
+        console.log(err);
+        return {success: false, response: err}
+    }
+}

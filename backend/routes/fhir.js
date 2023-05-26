@@ -50,7 +50,7 @@ router.post('/list', async (req, res) => {
   UserModel.findOne({username, password})
   .then(async user => {
     if (user.permissions.view_fhir) {
-      FhirModel.find()
+      FhirModel.find({active: "true"})
       .then(async fhirs => {
         res.status(200).json({success: true, fhirs: fhirs});
       })
@@ -74,7 +74,7 @@ router.post('/:id', async (req, res) => {
   .then(async user => {
     if (user) {
       if (user.permissions.view_fhir) {
-        FhirModel.find({id: req.params.id})
+        FhirModel.find({id: req.params.id, active: "true"})
         .then(async fhir => {
           res.status(200).json({success: true, fhir: fhir});
         })
