@@ -1,10 +1,11 @@
 const FormSchema = require('../model/Form');
 
-module.exports.newForm = async (id, composition) => {
+module.exports.newForm = async (id, composition, creator) => {
     try {
         newForm = {
             id,
-            composition
+            composition,
+            creator
         }
         let Form = new FormSchema(newForm);
         let response = await Form.save();

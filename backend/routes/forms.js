@@ -21,7 +21,7 @@ router.post('/submit', async (req, res) => {
       const sandardized_composition = removeBlocks(composition_json);
 
       // Criar o Form
-      let newFormResponse = await FormController.newForm(new_composition_id, sandardized_composition);
+      let newFormResponse = await FormController.newForm(new_composition_id, sandardized_composition, username);
       if (newFormResponse.success) {
         // Criar o FHIR
         FormModel.findOne({id: new_composition_id})
