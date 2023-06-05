@@ -129,4 +129,37 @@ router.post('/delete/:id', async (req, res) => {
   })
 });
 
+router.post('/:id', async (req, res) => {
+  const {current_user} = req.body;
+  const {username, password} = current_user;
+  UserModel.findOne({username, password})
+  .then(async user => {
+    if (user) {
+      if (user.permissions.create_forms_fhir) {
+        FormModel.find({id: req.params.id})
+        .then(async form => {
+          res.status(200).json({success: true, form: form});
+        })
+        .catch(err => {
+          res.status(200).json({success: false, info: err});
+        })
+      } else {
+        res.status(200).json({success: false, info: "Não tem permissões!"});
+      }
+    } else {
+      UserModel.findOne({username})
+      .then(user => {
+        if (user) {
+          res.json({success: false, info: "Password errada!"});
+        } else {
+          res.json({success: false, info: "Utilizador não existe!"});
+        }
+      })
+    }
+  })
+  .catch(err => {
+    res.json(err);
+  })
+});
+
 module.exports = router;
