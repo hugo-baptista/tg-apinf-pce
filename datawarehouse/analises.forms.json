@@ -1,0 +1,197 @@
+[{
+  "_id": {
+    "$oid": "647e2fa7265e389b15485cf8"
+  },
+  "id": "238dc975-9f3f-4086-8c0d-8576c7db8891-v1",
+  "composition": {
+    "items.0.0.items.0.items.0.value": "123456789",
+    "items.0.0.items.0.items.1.value": "John Doe",
+    "items.0.0.items.0.items.2.items.0.value": "Rua de Cima, 22\n2240-070 Vila",
+    "items.0.0.items.0.items.3.items.0.value": "2000-01-01",
+    "items.0.0.items.0.items.4.value": {
+      "code": "at0019",
+      "text": "Male"
+    },
+    "items.0.1.items.0.value": {
+      "code": "local_terms::BG",
+      "text": "Blood Gases"
+    },
+    "items.0.1.items.1.value": [
+      {
+        "code": "local_terms::1025.6",
+        "text": "17-cetosteróides, u"
+      },
+      {
+        "code": "local_terms::1050.7",
+        "text": "17-hidroxicorticosteróides (17-OHCS), u"
+      },
+      {
+        "code": "local_terms::651.3",
+        "text": "Ácido 5-hidroxindolacético (5 HIAA), doseamento, u"
+      }
+    ],
+    "items.0.1.items.3.value": "Valores dentro do normal\nNecessária nova avaliação em 6 meses",
+    "items.0.1.items.5.items.0.value": "Ciarán",
+    "items.0.1.items.5.items.1.value": "ciaran",
+    "items.0.1.items.2.value": [
+      {
+        "id": 1,
+        "values": {
+          "items.0.1.items.2.items.0.value": {
+            "code": "local_terms::1-8",
+            "text": "Acyclovir [Susceptibility]"
+          },
+          "items.0.1.items.2.items.1.value": "5",
+          "items.0.1.items.2.items.2.value": "mg/dL",
+          "items.0.1.items.2.items.3.items.0.value": "Hugo",
+          "items.0.1.items.2.items.3.items.1.value": "hugo",
+          "items.0.1.items.2.items.4.value.date": "2023-06-01",
+          "items.0.1.items.2.items.4.value.time": "12:00"
+        }
+      },
+      {
+        "id": 2,
+        "values": {
+          "items.0.1.items.2.items.0.value": {
+            "code": "local_terms::10-9",
+            "text": "Amdinocillin [Susceptibility] by Serum bactericidal titer"
+          },
+          "items.0.1.items.2.items.1.value": "15",
+          "items.0.1.items.2.items.2.value": "ug",
+          "items.0.1.items.2.items.3.items.0.value": "Tomás",
+          "items.0.1.items.2.items.3.items.1.value": "tomas",
+          "items.0.1.items.2.items.4.value.date": "2023-06-02",
+          "items.0.1.items.2.items.4.value.time": "14:00"
+        }
+      }
+    ]
+  },
+  "active": true,
+  "createdAt": {
+    "$date": "2023-06-05T18:55:35.215Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-05T18:55:35.215Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "647e305e265e389b15485d02"
+  },
+  "id": "ad0c9430-69e3-4aa1-bfc5-3729c23dd91e-v1",
+  "composition": {
+    "items.0.0.items.0.items.0.value": "987654321",
+    "items.0.0.items.0.items.1.value": "Maria",
+    "items.0.0.items.0.items.2.items.0.value": "Rua de Baixo, 55\n4444-444 Arredondela",
+    "items.0.0.items.0.items.3.items.0.value": "1995-11-02",
+    "items.0.0.items.0.items.4.value": {
+      "code": "at0018",
+      "text": "Female"
+    },
+    "items.0.1.items.0.value": {
+      "code": "local_terms::CG",
+      "text": "Cytogenetics"
+    },
+    "items.0.1.items.1.value": [
+      {
+        "code": "local_terms::338.7",
+        "text": "Ácido úrico, s/u/l"
+      },
+      {
+        "code": "local_terms::651.3",
+        "text": "Ácido 5-hidroxindolacético (5 HIAA), doseamento, u"
+      },
+      {
+        "code": "local_terms::1050.7",
+        "text": "17-hidroxicorticosteróides (17-OHCS), u"
+      }
+    ],
+    "items.0.1.items.3.value": "Valores normais",
+    "items.0.1.items.5.items.0.value": "Gonçalo",
+    "items.0.1.items.5.items.1.value": "goncalo",
+    "items.0.1.items.2.value": [
+      {
+        "id": 1,
+        "values": {
+          "items.0.1.items.2.items.0.value": {
+            "code": "local_terms::100-8",
+            "text": "Cefoperazone [Susceptibility] by Minimum inhibitory concentration (MIC)"
+          },
+          "items.0.1.items.2.items.1.value": "20",
+          "items.0.1.items.2.items.2.value": "mg",
+          "items.0.1.items.2.items.3.items.0.value": "Hugo",
+          "items.0.1.items.2.items.3.items.1.value": "hugo",
+          "items.0.1.items.2.items.4.value.date": "2023-05-28",
+          "items.0.1.items.2.items.4.value.time": "17:00"
+        }
+      }
+    ]
+  },
+  "active": true,
+  "createdAt": {
+    "$date": "2023-06-05T18:58:38.360Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-05T18:58:38.360Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "647e30d6265e389b15485d0d"
+  },
+  "id": "d2e5a0fe-70e1-456a-aaa4-e813203faf9c-v1",
+  "composition": {
+    "items.0.0.items.0.items.0.value": "123456789",
+    "items.0.0.items.0.items.1.value": "John Doe",
+    "items.0.0.items.0.items.2.items.0.value": "Rua de Cima, 22\n2240-070 Vila",
+    "items.0.0.items.0.items.3.items.0.value": "2000-01-01",
+    "items.0.0.items.0.items.4.value": {
+      "code": "at0019",
+      "text": "Male"
+    },
+    "items.0.1.items.0.value": {
+      "code": "local_terms::BG",
+      "text": "Blood Gases"
+    },
+    "items.0.1.items.1.value": [
+      {
+        "code": "local_terms::1025.6",
+        "text": "17-cetosteróides, u"
+      },
+      {
+        "code": "local_terms::1050.7",
+        "text": "17-hidroxicorticosteróides (17-OHCS), u"
+      }
+    ],
+    "items.0.1.items.3.value": "Valores ligeiramente altos",
+    "items.0.1.items.5.items.0.value": "Ciarán",
+    "items.0.1.items.5.items.1.value": "ciaran",
+    "items.0.1.items.2.value": [
+      {
+        "id": 1,
+        "values": {
+          "items.0.1.items.2.items.0.value": {
+            "code": "local_terms::1-8",
+            "text": "Acyclovir [Susceptibility]"
+          },
+          "items.0.1.items.2.items.1.value": "14",
+          "items.0.1.items.2.items.2.value": "mg",
+          "items.0.1.items.2.items.3.items.0.value": "Tomás",
+          "items.0.1.items.2.items.3.items.1.value": "tomas",
+          "items.0.1.items.2.items.4.value.date": "2023-06-04",
+          "items.0.1.items.2.items.4.value.time": "16:30"
+        }
+      }
+    ]
+  },
+  "active": true,
+  "createdAt": {
+    "$date": "2023-06-05T19:00:38.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-05T19:00:38.403Z"
+  },
+  "__v": 0
+}]
