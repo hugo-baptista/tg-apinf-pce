@@ -135,7 +135,7 @@ router.post('/:id', async (req, res) => {
   UserModel.findOne({username, password})
   .then(async user => {
     if (user) {
-      if (user.permissions.create_forms_fhir) {
+      if (user.permissions.view_forms) {
         FormModel.find({id: req.params.id})
         .then(async form => {
           res.status(200).json({success: true, form: form});
