@@ -1,8 +1,8 @@
 [{
   "_id": {
-    "$oid": "647e2fa7265e389b15485cf8"
+    "$oid": "647e51cac22b68b726201516"
   },
-  "id": "238dc975-9f3f-4086-8c0d-8576c7db8891-v1",
+  "id": "6948dd69-2fe3-456e-958b-dda4077c2884-v1",
   "composition": {
     "items.0.0.items.0.items.0.value": "123456789",
     "items.0.0.items.0.items.1.value": "John Doe",
@@ -24,14 +24,10 @@
       {
         "code": "local_terms::1050.7",
         "text": "17-hidroxicorticosteróides (17-OHCS), u"
-      },
-      {
-        "code": "local_terms::651.3",
-        "text": "Ácido 5-hidroxindolacético (5 HIAA), doseamento, u"
       }
     ],
-    "items.0.1.items.3.value": "Valores dentro do normal\nNecessária nova avaliação em 6 meses",
-    "items.0.1.items.5.items.0.value": "Ciarán",
+    "items.0.1.items.3.value": "Valores abaixo do normal.\nRepetir em 6 meses",
+    "items.0.1.items.5.items.0.value": "Ciarán McEvoy",
     "items.0.1.items.5.items.1.value": "ciaran",
     "items.0.1.items.2.value": [
       {
@@ -42,10 +38,10 @@
             "text": "Acyclovir [Susceptibility]"
           },
           "items.0.1.items.2.items.1.value": "5",
-          "items.0.1.items.2.items.2.value": "mg/dL",
-          "items.0.1.items.2.items.3.items.0.value": "Hugo",
+          "items.0.1.items.2.items.2.value": "mg",
+          "items.0.1.items.2.items.3.items.0.value": "Hugo Silva",
           "items.0.1.items.2.items.3.items.1.value": "hugo",
-          "items.0.1.items.2.items.4.value.date": "2023-06-01",
+          "items.0.1.items.2.items.4.value.date": "2022-12-01",
           "items.0.1.items.2.items.4.value.time": "12:00"
         }
       },
@@ -57,91 +53,30 @@
             "text": "Amdinocillin [Susceptibility] by Serum bactericidal titer"
           },
           "items.0.1.items.2.items.1.value": "15",
-          "items.0.1.items.2.items.2.value": "ug",
-          "items.0.1.items.2.items.3.items.0.value": "Tomás",
+          "items.0.1.items.2.items.2.value": "dL",
+          "items.0.1.items.2.items.3.items.0.value": "Tomás Lima",
           "items.0.1.items.2.items.3.items.1.value": "tomas",
-          "items.0.1.items.2.items.4.value.date": "2023-06-02",
+          "items.0.1.items.2.items.4.value.date": "2022-12-01",
           "items.0.1.items.2.items.4.value.time": "14:00"
         }
       }
     ]
   },
   "active": true,
+  "creator": "hugo",
   "createdAt": {
-    "$date": "2023-06-05T18:55:35.215Z"
+    "$date": "2023-06-05T21:21:14.540Z"
   },
   "updatedAt": {
-    "$date": "2023-06-05T18:55:35.215Z"
+    "$date": "2023-06-05T21:21:14.540Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "647e305e265e389b15485d02"
+    "$oid": "647e51f8c22b68b72620151c"
   },
-  "id": "ad0c9430-69e3-4aa1-bfc5-3729c23dd91e-v1",
-  "composition": {
-    "items.0.0.items.0.items.0.value": "987654321",
-    "items.0.0.items.0.items.1.value": "Maria",
-    "items.0.0.items.0.items.2.items.0.value": "Rua de Baixo, 55\n4444-444 Arredondela",
-    "items.0.0.items.0.items.3.items.0.value": "1995-11-02",
-    "items.0.0.items.0.items.4.value": {
-      "code": "at0018",
-      "text": "Female"
-    },
-    "items.0.1.items.0.value": {
-      "code": "local_terms::CG",
-      "text": "Cytogenetics"
-    },
-    "items.0.1.items.1.value": [
-      {
-        "code": "local_terms::338.7",
-        "text": "Ácido úrico, s/u/l"
-      },
-      {
-        "code": "local_terms::651.3",
-        "text": "Ácido 5-hidroxindolacético (5 HIAA), doseamento, u"
-      },
-      {
-        "code": "local_terms::1050.7",
-        "text": "17-hidroxicorticosteróides (17-OHCS), u"
-      }
-    ],
-    "items.0.1.items.3.value": "Valores normais",
-    "items.0.1.items.5.items.0.value": "Gonçalo",
-    "items.0.1.items.5.items.1.value": "goncalo",
-    "items.0.1.items.2.value": [
-      {
-        "id": 1,
-        "values": {
-          "items.0.1.items.2.items.0.value": {
-            "code": "local_terms::100-8",
-            "text": "Cefoperazone [Susceptibility] by Minimum inhibitory concentration (MIC)"
-          },
-          "items.0.1.items.2.items.1.value": "20",
-          "items.0.1.items.2.items.2.value": "mg",
-          "items.0.1.items.2.items.3.items.0.value": "Hugo",
-          "items.0.1.items.2.items.3.items.1.value": "hugo",
-          "items.0.1.items.2.items.4.value.date": "2023-05-28",
-          "items.0.1.items.2.items.4.value.time": "17:00"
-        }
-      }
-    ]
-  },
-  "active": true,
-  "createdAt": {
-    "$date": "2023-06-05T18:58:38.360Z"
-  },
-  "updatedAt": {
-    "$date": "2023-06-05T18:58:38.360Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "647e30d6265e389b15485d0d"
-  },
-  "id": "d2e5a0fe-70e1-456a-aaa4-e813203faf9c-v1",
+  "id": "335dcc5e-0fa9-4a48-bc35-140877b64046-v1",
   "composition": {
     "items.0.0.items.0.items.0.value": "123456789",
     "items.0.0.items.0.items.1.value": "John Doe",
@@ -165,8 +100,192 @@
         "text": "17-hidroxicorticosteróides (17-OHCS), u"
       }
     ],
-    "items.0.1.items.3.value": "Valores ligeiramente altos",
-    "items.0.1.items.5.items.0.value": "Ciarán",
+    "items.0.1.items.3.value": "Valores normais",
+    "items.0.1.items.5.items.0.value": "Ciarán McEvoy",
+    "items.0.1.items.5.items.1.value": "ciaran",
+    "items.0.1.items.2.value": [
+      {
+        "id": 1,
+        "values": {
+          "items.0.1.items.2.items.0.value": {
+            "code": "local_terms::1-8",
+            "text": "Acyclovir [Susceptibility]"
+          },
+          "items.0.1.items.2.items.1.value": "12",
+          "items.0.1.items.2.items.2.value": "mg",
+          "items.0.1.items.2.items.3.items.0.value": "Hugo Silva",
+          "items.0.1.items.2.items.3.items.1.value": "hugo",
+          "items.0.1.items.2.items.4.value.date": "2022-12-01",
+          "items.0.1.items.2.items.4.value.time": "13:00"
+        }
+      },
+      {
+        "id": 2,
+        "values": {
+          "items.0.1.items.2.items.0.value": {
+            "code": "local_terms::10-9",
+            "text": "Amdinocillin [Susceptibility] by Serum bactericidal titer"
+          },
+          "items.0.1.items.2.items.1.value": "26",
+          "items.0.1.items.2.items.2.value": "dL",
+          "items.0.1.items.2.items.3.items.0.value": "Tomás Lima",
+          "items.0.1.items.2.items.3.items.1.value": "tomas",
+          "items.0.1.items.2.items.4.value.date": "2023-06-01",
+          "items.0.1.items.2.items.4.value.time": "14:30"
+        }
+      }
+    ]
+  },
+  "active": true,
+  "creator": "hugo",
+  "createdAt": {
+    "$date": "2023-06-05T21:22:00.692Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-05T21:22:00.692Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "647e529ac22b68b72620152e"
+  },
+  "id": "4d4ba40d-30b4-4963-8250-baf3dddbd025-v1",
+  "composition": {
+    "items.0.0.items.0.items.0.value": "159482637",
+    "items.0.0.items.0.items.1.value": "Albert Jobson",
+    "items.0.0.items.0.items.2.items.0.value": "Rua de Baixo, 22\n2222-212 Algures",
+    "items.0.0.items.0.items.3.items.0.value": "1995-08-15",
+    "items.0.0.items.0.items.4.value": {
+      "code": "at0020",
+      "text": "Other"
+    },
+    "items.0.1.items.0.value": {
+      "code": "local_terms::CG",
+      "text": "Cytogenetics"
+    },
+    "items.0.1.items.1.value": [
+      {
+        "code": "local_terms::651.3",
+        "text": "Ácido 5-hidroxindolacético (5 HIAA), doseamento, u"
+      }
+    ],
+    "items.0.1.items.3.value": "Valores ligeiramente acima do normal.\nRepetir em 3 meses.",
+    "items.0.1.items.5.items.0.value": "Gonçalo Carvalho",
+    "items.0.1.items.5.items.1.value": "goncalo",
+    "items.0.1.items.2.value": [
+      {
+        "id": 1,
+        "values": {
+          "items.0.1.items.2.items.0.value": {
+            "code": "local_terms::100-8",
+            "text": "Cefoperazone [Susceptibility] by Minimum inhibitory concentration (MIC)"
+          },
+          "items.0.1.items.2.items.1.value": "10",
+          "items.0.1.items.2.items.2.value": "ug",
+          "items.0.1.items.2.items.3.items.0.value": "Hugo Silva",
+          "items.0.1.items.2.items.3.items.1.value": "hugo",
+          "items.0.1.items.2.items.4.value.date": "2023-02-08",
+          "items.0.1.items.2.items.4.value.time": "15:40"
+        }
+      }
+    ]
+  },
+  "active": true,
+  "creator": "hugo",
+  "createdAt": {
+    "$date": "2023-06-05T21:24:42.655Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-05T21:24:42.655Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "647e5325c22b68b726201539"
+  },
+  "id": "582d7e2f-1567-4b80-b1d8-d82ab496d7a6-v1",
+  "composition": {
+    "items.0.0.items.0.items.0.value": "159482637",
+    "items.0.0.items.0.items.1.value": "Albert Jobson",
+    "items.0.0.items.0.items.2.items.0.value": "Rua de Baixo, 22\n2222-212 Algures",
+    "items.0.0.items.0.items.3.items.0.value": "1995-08-15",
+    "items.0.0.items.0.items.4.value": {
+      "code": "at0020",
+      "text": "Other"
+    },
+    "items.0.1.items.0.value": {
+      "code": "local_terms::CG",
+      "text": "Cytogenetics"
+    },
+    "items.0.1.items.1.value": [
+      {
+        "code": "local_terms::651.3",
+        "text": "Ácido 5-hidroxindolacético (5 HIAA), doseamento, u"
+      }
+    ],
+    "items.0.1.items.3.value": "Valores normais.",
+    "items.0.1.items.5.items.0.value": "Gonçalo Carvalho",
+    "items.0.1.items.5.items.1.value": "goncalo",
+    "items.0.1.items.2.value": [
+      {
+        "id": 1,
+        "values": {
+          "items.0.1.items.2.items.0.value": {
+            "code": "local_terms::100-8",
+            "text": "Cefoperazone [Susceptibility] by Minimum inhibitory concentration (MIC)"
+          },
+          "items.0.1.items.2.items.1.value": "5",
+          "items.0.1.items.2.items.2.value": "ug",
+          "items.0.1.items.2.items.3.items.0.value": "Tomás Lima",
+          "items.0.1.items.2.items.3.items.1.value": "tomas",
+          "items.0.1.items.2.items.4.value.date": "2023-05-17",
+          "items.0.1.items.2.items.4.value.time": "09:30"
+        }
+      }
+    ]
+  },
+  "active": true,
+  "creator": "tomas",
+  "createdAt": {
+    "$date": "2023-06-05T21:27:01.228Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-05T21:27:01.228Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "647e53c9c22b68b726201543"
+  },
+  "id": "8dd59701-39cb-433c-9a08-6ac7e6c17d8f-v1",
+  "composition": {
+    "items.0.0.items.0.items.0.value": "987654321",
+    "items.0.0.items.0.items.1.value": "Maria Joaquina",
+    "items.0.0.items.0.items.2.items.0.value": "Rua de Baixo, 45\n2222-212 Algures",
+    "items.0.0.items.0.items.3.items.0.value": "2002-02-22",
+    "items.0.0.items.0.items.4.value": {
+      "code": "at0018",
+      "text": "Female"
+    },
+    "items.0.1.items.0.value": {
+      "code": "local_terms::BG",
+      "text": "Blood Gases"
+    },
+    "items.0.1.items.1.value": [
+      {
+        "code": "local_terms::1025.6",
+        "text": "17-cetosteróides, u"
+      },
+      {
+        "code": "local_terms::1050.7",
+        "text": "17-hidroxicorticosteróides (17-OHCS), u"
+      }
+    ],
+    "items.0.1.items.3.value": "Valores normais.",
+    "items.0.1.items.5.items.0.value": "Ciarán McEvoy",
     "items.0.1.items.5.items.1.value": "ciaran",
     "items.0.1.items.2.value": [
       {
@@ -178,20 +297,36 @@
           },
           "items.0.1.items.2.items.1.value": "14",
           "items.0.1.items.2.items.2.value": "mg",
-          "items.0.1.items.2.items.3.items.0.value": "Tomás",
+          "items.0.1.items.2.items.3.items.0.value": "Tomás Lima",
           "items.0.1.items.2.items.3.items.1.value": "tomas",
-          "items.0.1.items.2.items.4.value.date": "2023-06-04",
-          "items.0.1.items.2.items.4.value.time": "16:30"
+          "items.0.1.items.2.items.4.value.date": "2023-06-01",
+          "items.0.1.items.2.items.4.value.time": "17:00"
+        }
+      },
+      {
+        "id": 2,
+        "values": {
+          "items.0.1.items.2.items.0.value": {
+            "code": "local_terms::10-9",
+            "text": "Amdinocillin [Susceptibility] by Serum bactericidal titer"
+          },
+          "items.0.1.items.2.items.1.value": "22",
+          "items.0.1.items.2.items.2.value": "dL",
+          "items.0.1.items.2.items.3.items.0.value": "Hugo Silva",
+          "items.0.1.items.2.items.3.items.1.value": "hugo",
+          "items.0.1.items.2.items.4.value.date": "2023-05-31",
+          "items.0.1.items.2.items.4.value.time": "16:20"
         }
       }
     ]
   },
   "active": true,
+  "creator": "tomas",
   "createdAt": {
-    "$date": "2023-06-05T19:00:38.403Z"
+    "$date": "2023-06-05T21:29:45.010Z"
   },
   "updatedAt": {
-    "$date": "2023-06-05T19:00:38.403Z"
+    "$date": "2023-06-05T21:29:45.010Z"
   },
   "__v": 0
 }]

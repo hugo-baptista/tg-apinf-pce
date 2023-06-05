@@ -1,6 +1,6 @@
 _id,username,password,name,code,designation,permissions.create_users,permissions.create_forms_fhir,permissions.view_forms,permissions.view_fhir,id,__v
-647e2e6d265e389b15485cd7,admin,admin,Administrador,224608005,Administrative healthcare staff,true,false,false,false,da566a20-4d38-4cdc-abd0-61172f3fbc03,0
-647e2e6e265e389b15485ce0,hugo,hugo,Hugo Silva,18850004,Laboratory hematologist,false,true,true,true,996079ca-9e20-456e-8a8e-f1e2c80157ca,0
-647e2e6e265e389b15485ce8,tomas,tomas,Tomás Lima,61246008,Laboratory medicine specialist,false,true,true,true,c7ccb13f-0a66-40f2-8817-f70b4b63928b,0
-647e2e6e265e389b15485cea,ciaran,ciaran,Ciarán McEvoy,224529009,Clinical assistant,false,false,true,true,dc5c5ca1-7462-46d8-b909-e71ecc6bd64b,0
-647e2e6e265e389b15485cec,goncalo,goncalo,Gonçalo Carvalho,224529009,Clinical assistant,false,false,true,true,67d2728c-ac6f-4559-a346-a026d1f02950,0
+647e50c1c22b68b7262014f3,admin,admin,Administrador,224608005,Administrative healthcare staff,true,false,false,false,d3a57efd-2ae9-42ba-b7b7-6c3f6b610cde,0
+647e50c1c22b68b726201502,hugo,hugo,Hugo Silva,18850004,Laboratory hematologist,false,true,true,true,9e790c69-1aa7-4873-b0fc-a8e285a544df,0
+647e50c1c22b68b726201504,tomas,tomas,Tomás Lima,61246008,Laboratory medicine specialist,false,true,true,true,bcded30f-b617-4d59-93d6-f6b117fc5510,0
+647e50c1c22b68b726201506,ciaran,ciaran,Ciarán McEvoy,224529009,Clinical assistant,false,false,true,true,839c824e-a134-440c-a3ef-df85197b05e3,0
+647e50c1c22b68b726201508,goncalo,goncalo,Gonçalo Carvalho,224529009,Clinical assistant,false,false,true,true,40fec51c-b5da-4b21-b83c-f9ddfb07a0bc,0
