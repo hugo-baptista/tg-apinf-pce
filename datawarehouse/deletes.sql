@@ -1,0 +1,10 @@
+delete from fact_analise;
+delete from dim_observacao;
+delete from dim_tipo_observacao;
+delete from dim_codigo_has_procedimento;
+delete from dim_procedimento;
+delete from dim_tipo_procedimento;
+delete from dim_codigo;
+delete from dim_paciente;
+delete from dim_tecnico;
+delete from dim_tipo_tecnico;
