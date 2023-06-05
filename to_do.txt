@@ -1,4 +1,1 @@
-- Modelagem no MySQL
-- Ligação ao MySQL
-- Exportar MongoDB para CSV
 - MySQL queries
