@@ -58,7 +58,7 @@ function EditForm() {
   return (
     <div>
       {loading && (
-        <p>Loading...</p>
+        <p className='center'>Loading...</p>
       )}
       {!(loading) && (
         <Form
@@ -78,7 +78,7 @@ function EditForm() {
         />
       )}
       {response && (
-        <p>{response}</p>
+        <p className='center'>{response}</p>
       )}
     </div>
     );

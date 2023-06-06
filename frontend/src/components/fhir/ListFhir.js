@@ -100,7 +100,7 @@ function ListFhir() {
       </TableContainer>
 
       {success && (
-        <p>Erro: {success}</p>
+        <p className='center'>Erro: {success}</p>
       )}
     </div>
   );

@@ -31,7 +31,7 @@ function ViewFhir() {
   return (
     <div>
       {loading && (
-        <p>Loading...</p>
+        <p className='center'>Loading...</p>
       )}
       {!(loading) && (
         <pre>

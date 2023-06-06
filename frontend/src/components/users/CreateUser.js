@@ -67,7 +67,7 @@ const CreateUser = () => {
   return(
     <div className="createuser">
       {loading && (
-        <p>Loading...</p>
+        <p className='center'>Loading...</p>
       )}
       {!loading && (
         <div>
@@ -102,7 +102,7 @@ const CreateUser = () => {
         </div>
       )}
       {response && (
-        <p>{response}</p>
+        <p className='center'>{response}</p>
       )}
     </div>
   );

@@ -67,7 +67,7 @@ function CreateForm() {
         formDesign={JSON.stringify(style)}
       />
       {response && (
-        <p>{response}</p>
+        <p className='center'>{response}</p>
       )}
     </div>
   );

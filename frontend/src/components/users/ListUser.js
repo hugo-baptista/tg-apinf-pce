@@ -44,13 +44,15 @@ function ListUser() {
   return (
     <div>
       {user && user.permissions.create_users && (
-        <Link to="/users/create">
-          <Button startIcon={<AddIcon/>} color='success' variant='contained'
-            sx={{ my: 2 }}
-          >
-              Criar Utilizador
-          </Button>
-        </Link>
+        <div className="center">
+          <Link to="/users/create">
+            <Button startIcon={<AddIcon/>} color='success' variant='contained'
+              sx={{ my: 2 }}
+            >
+                Criar Utilizador
+            </Button>
+          </Link>
+        </div>
       )}
 
       <TableContainer component={Paper}>
@@ -93,7 +95,7 @@ function ListUser() {
       </TableContainer>
 
       {success && (
-        <p>Erro: {success}</p>
+        <p className='center'>Erro: {success}</p>
       )}
     </div>
   );
