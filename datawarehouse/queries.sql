@@ -54,3 +54,31 @@ where	pac.id_Paciente=a.id_Paciente and a.id_Recetor=tec.id_Tecnico and a.id_Pro
 		and pro.id_Tipo_Procedimento=tp.id_Tipo_Procedimento and pro.id_Procedimento=ob.id_Procedimento
         and ob.id_Tipo_Observacao=tob.id_Tipo_Observacao
 order by tec.username, pac.num_sns, tp.codigo, tob.codigo, ob.data_observacao;
+
+-- Estatística das observações por ano
+select year(ob.data_observacao) as 'Ano', count(*) as 'Nº de obs.'
+from dim_observacao as ob
+group by year(ob.data_observacao)
+order by year(ob.data_observacao) asc;
+
+-- Estatística das observações por ano e mês
+select year(ob.data_observacao) as 'Ano', month(ob.data_observacao) as 'Mês', count(*) as 'Nº de obs.'
+from dim_observacao as ob
+group by year(ob.data_observacao), month(ob.data_observacao)
+order by year(ob.data_observacao), month(ob.data_observacao) asc;
+
+-- Estatística das observações por hora
+select concat(h, ':00-', h+1, ':00') as 'Hora', c as 'Nº de obs.'
+from(
+	select hour(ob.data_observacao) as h, count(*) as c
+	from dim_observacao as ob
+	group by hour(ob.data_observacao)
+	order by hour(ob.data_observacao) asc
+) t;
+
+-- Estatística das observações por idade e género
+select pac.genero, timestampdiff(year, pac.data_nascimento, ob.data_observacao) as idade, count(*)
+from dim_paciente as pac, fact_analise as a, dim_procedimento as pro, dim_observacao as ob
+where pac.id_Paciente=a.id_Paciente and a.id_Procedimento=pro.id_Procedimento and pro.id_Procedimento=ob.id_Procedimento
+group by pac.genero, idade
+order by pac.genero, idade asc;
