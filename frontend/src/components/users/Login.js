@@ -37,7 +37,7 @@ function Login() {
     );
 
   return (
-    <div className="content">
+    <div className="content center">
       <TextField id="uname" label="Username" type="search" variant="filled"
       /><br /> <br />
       {renderErrorMessage("uname_wrong")}
