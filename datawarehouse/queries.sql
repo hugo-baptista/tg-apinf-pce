@@ -77,7 +77,7 @@ from(
 ) t;
 
 -- Estatística das observações por idade e género
-select pac.genero, timestampdiff(year, pac.data_nascimento, ob.data_observacao) as idade, count(*)
+select pac.genero as 'Género', timestampdiff(year, pac.data_nascimento, ob.data_observacao) as 'Idade', count(*) as 'Nº de obs.'
 from dim_paciente as pac, fact_analise as a, dim_procedimento as pro, dim_observacao as ob
 where pac.id_Paciente=a.id_Paciente and a.id_Procedimento=pro.id_Procedimento and pro.id_Procedimento=ob.id_Procedimento
 group by pac.genero, idade
