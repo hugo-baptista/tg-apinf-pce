@@ -48,7 +48,7 @@ function ViewForm() {
           canCancel={false}
           onCancel={status => console.log("CANCELLED:", status)}
           
-          editMode={false}
+          editMode={true}
           professionalTasks={["Registar Pedido", "Consultar Pedido","Anular Pedido"]}
         />
       )}
