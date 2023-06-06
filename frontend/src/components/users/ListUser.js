@@ -10,9 +10,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import AddIcon from '@mui/icons-material/Add';
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 
 var axios = require('axios');
 
@@ -62,7 +59,6 @@ function ListUser() {
               <TableCell>Nome</TableCell>
               <TableCell>Username</TableCell>
               <TableCell>Tipo de Utilizador</TableCell>
-              <TableCell align="right">Opções</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -79,14 +75,6 @@ function ListUser() {
                 </TableCell>
                 <TableCell component="th" scope="row">
                   ({user.code}) {user.designation}
-                </TableCell>
-                <TableCell align="right">
-                  <IconButton aria-label="edit" size="small" color='success'>
-                    <EditIcon fontSize="small" />
-                  </IconButton>
-                  <IconButton aria-label="delete" size="small" color='error'>
-                    <DeleteIcon fontSize="small" />
-                  </IconButton>
                 </TableCell>
               </TableRow>
             ))}
