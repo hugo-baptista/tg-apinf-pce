@@ -8,6 +8,11 @@ PG50416 Hugo Baptista Fernandes Silva
 PG50788 Tomás Alves Lima
 ```
 
+Como as pastas node_modulesdo frontend e do backend são muito pesadas, elas não são guardadas no repositório git, pelo que é necessário realizar o seguinte comando para os dois (frontend e backend):
+```
+npm install --legacy-peer-deps
+```
+
 # Estrutura do Trabalho
 ## Backend - NodeJS - Porta 8080
 ### Criar o Backend:
